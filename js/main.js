@@ -1,6 +1,17 @@
 (function ($) {
     "use strict";
 
+    var whatsappNumber = '966539176765';
+    var whatsappButton = document.createElement('a');
+    whatsappButton.className = 'whatsapp-float';
+    whatsappButton.href = 'https://wa.me/' + whatsappNumber;
+    whatsappButton.target = '_blank';
+    whatsappButton.rel = 'noopener noreferrer';
+    whatsappButton.setAttribute('aria-label', 'Contact us on WhatsApp');
+    whatsappButton.title = 'Contact us on WhatsApp';
+    whatsappButton.innerHTML = '<i class="fab fa-whatsapp" aria-hidden="true"></i>';
+    document.body.appendChild(whatsappButton);
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -92,28 +103,6 @@
         }
     });
 
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        center: true,
-        dots: false,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
-        ],
-        responsive: {
-            0:{
-                items:1
-            },
-            768:{
-                items:2
-            }
-        }
-    });
 
     
 })(jQuery);

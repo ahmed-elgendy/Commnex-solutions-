@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Commnex Solutions</title>
+        <title>Services | Commnex Solutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,7 +30,57 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style.css?v=nav-order" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .services-page { --svc-blue: #243D94; --svc-ink: #18213b; --svc-muted: #647087; --svc-pale: #f4f6fb; overflow: hidden; font-family: 'Poppins', sans-serif; }
+        .services-page p { font-family: 'Poppins', sans-serif; }
+        .services-page-header { margin-bottom: 0 !important; background: #243D94 !important; }
+        .services-page-header h1 { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: .06em; }
+        .services-page-wrap { width: min(calc(100% - 40px), 1180px); margin: 0 auto; }
+        .services-intro-new { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 7vw, 88px); align-items: center; padding: clamp(64px, 9vw, 116px) 0; }
+        .services-intro-new__image { overflow: hidden; border-radius: 16px; }
+        .services-intro-new__image img { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+        .services-kicker-new { margin: 0 0 12px; color: var(--svc-blue); font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+        .services-intro-new h2, .services-details-new h2 { margin: 0 0 18px; color: var(--svc-ink); font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.18; }
+        .services-intro-new h2 span, .services-intro-new__lead span { color: var(--svc-blue); }
+        .services-intro-new__lead { margin: 0 0 16px; color: var(--svc-ink); font-size: clamp(19px, 2vw, 26px); font-weight: 600; line-height: 1.45; }
+        .services-intro-new__copy, .service-detail-new p { margin: 0; color: var(--svc-muted); font-size: 15px; line-height: 1.9; }
+        .service-overview-row { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); gap: clamp(28px, 6vw, 76px); align-items: center; padding-bottom: 72px; }
+        .service-overview-row--reverse { grid-template-columns: minmax(250px, .85fr) minmax(0, 1.15fr); }
+        .service-overview-row--reverse .service-overview-list { order: -1; }
+        .service-overview-accordion { display: grid; height: 300px; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+        .service-overview-accordion a { position: relative; min-width: 0; overflow: hidden; border-radius: 8px; color: #fff; text-decoration: none; transition: transform .3s ease; }
+        .service-overview-accordion a::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 25%, rgba(9, 17, 49, .92)); content: ''; }
+        .service-overview-accordion img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease, filter .3s ease; }
+        .service-overview-accordion span { position: absolute; z-index: 1; right: 9px; bottom: 14px; left: 9px; font-size: 12px; font-weight: 700; line-height: 1.35; text-align: center; opacity: 0; transition: opacity .3s ease; }
+        .service-overview-accordion a:hover, .service-overview-accordion a:focus-visible { z-index: 2; transform: scaleX(1.2); }
+        .service-overview-accordion a:hover img, .service-overview-accordion a:focus-visible img { filter: brightness(.68); transform: scale(1.12); }
+        .service-overview-accordion a:hover span, .service-overview-accordion a:focus-visible span { opacity: 1; }
+        .service-overview-list h3 { margin: 0 0 17px; color: var(--svc-blue); font-size: 18px; font-weight: 700; }
+        .service-overview-list ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+        .service-overview-list li { position: relative; padding-left: 22px; color: var(--svc-muted); font-size: 14px; line-height: 1.5; }
+        .service-overview-list li::before { position: absolute; top: .55em; left: 0; width: 9px; height: 9px; border: 2px solid var(--svc-blue); border-radius: 50%; content: ''; }
+        .services-details-new { padding: 35px 0 112px; }
+        .services-details-new__heading { margin-bottom: 45px; text-align: center; }
+        .services-details-new__heading h2 { margin-bottom: 15px; }
+        .services-rule-new { width: 72px; height: 2px; margin: 0 auto; background: var(--svc-blue); }
+        .service-detail-new { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 8vw, 120px); align-items: center; padding: 58px 0; border-bottom: 1px solid #e3e7f0; }
+        .service-detail-new:nth-of-type(even) { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+        .service-detail-new:nth-of-type(even) .service-detail-new__visual { order: 2; }
+        .service-detail-new__number { margin: 0 0 13px !important; color: var(--svc-blue) !important; font-size: 14px !important; font-weight: 700; letter-spacing: .14em; }
+        .service-detail-new h3 { margin: 0 0 16px; color: var(--svc-ink); font-size: clamp(23px, 3vw, 34px); font-weight: 700; line-height: 1.25; }
+        .service-detail-new__visual { overflow: hidden; border-radius: 14px; background: var(--svc-pale); }
+        .service-detail-new__visual img { display: block; width: 100%; aspect-ratio: 1.65; object-fit: cover; }
+        .service-detail-new__lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+        .service-detail-new__lists h4 { margin: 0 0 10px; color: var(--svc-blue); font-size: 14px; }
+        .service-detail-new__lists ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+        .service-detail-new__lists li { position: relative; padding-left: 16px; color: var(--svc-muted); font-size: 13px; line-height: 1.5; }
+        .service-detail-new__lists li::before { position: absolute; top: .65em; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--svc-blue); content: ''; }
+        @media (max-width: 800px) { .services-intro-new, .service-overview-row, .service-overview-row--reverse, .service-detail-new, .service-detail-new:nth-of-type(even) { grid-template-columns: 1fr; } .service-overview-row--reverse .service-overview-list, .service-detail-new:nth-of-type(even) .service-detail-new__visual { order: initial; } .service-overview-accordion { height: 260px; } .service-detail-new { gap: 28px; padding: 42px 0; } }
+        @media (max-width: 520px) { .services-page-wrap { width: min(calc(100% - 32px), 1180px); } .service-overview-accordion { height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px; } .service-overview-accordion a:hover, .service-overview-accordion a:focus-visible { transform: scale(1.03); } .service-overview-accordion span { opacity: 1; } .service-detail-new__lists { grid-template-columns: 1fr; gap: 18px; } }
+        #legacy-services-primary, #legacy-services-secondary { display: none; }
+    </style>
 </head>
 <body>
     <!-- Spinner Start -->
@@ -56,7 +106,7 @@
             <div class="col-lg-6 text-end">
                 <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
                     <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
-                    <span class="fs-5 fw-bold">+012 345 6789</span>
+                    <span class="fs-5 fw-bold">+966539176765</span>
                 </div>
             </div>
         </div>
@@ -66,32 +116,33 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
-        <a href="#" class="navbar-brand ps-5 me-0">
-
-             <img class="w-100" src="../img/logo.png" alt="Image">
-            <!-- <h1 class="text-white m-0">Industro</h1> -->
+        <a href="../index.html" class="navbar-brand ps-5 me-0">
+             <img class="w-100" src="../img/logo.png" alt="Commnex Solutions">
         </a>
         <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="../index.html" class="nav-item nav-link ">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="#" class="nav-item nav-link active">Services</a>
-               
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies & Solutions</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="project.html" class="dropdown-item">Projects</a>
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        <a href="enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+                        <a href="data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+                        <a href="cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                        <a href="collaboration.html" class="dropdown-item">Collaboration</a>
+                        <a href="404.html" class="dropdown-item">GPON & Structure Cabling Solution</a>
+                        <a href="404.html" class="dropdown-item">Light Current Solutions</a>
+                        <a href="data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
                     </div>
-                </div> -->
-              
-                <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+                </div>
+
+                <a href="partnership.html" class="nav-item nav-link">Partners</a>
+                <a href="service.html" class="nav-item nav-link active">Services</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us</a>
             </div>
             <!-- <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a> -->
         </div>
@@ -101,9 +152,9 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header services-page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 text-white animated slideInRight">Services</h1>
+            <h1 class="display-3 text-white animated slideInRight">SERVICES</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -119,8 +170,31 @@
 
 
 
+    <main class="services-page">
+        <section class="services-page-wrap services-intro-new" aria-labelledby="services-intro-title">
+            <div class="services-intro-new__image"><img src="../img/our value-01.jpg" alt="Commnex Solutions team delivering IT services"></div>
+            <div><p class="services-kicker-new">Professional services</p><h2 id="services-intro-title"><span>Commnex Solutions</span> Services</h2><p class="services-intro-new__lead">At <span>Commnex Solutions</span> We Pride Ourselves In Professional Services</p><p class="services-intro-new__copy">Our experienced and professional team supports clients through every stage of project execution, from initial planning and consultancy to detailed design, engineering, implementation and ongoing support. We bring practical expertise to complex technology environments and build solutions that are ready for the future.</p></div>
+        </section>
+        <section class="services-page-wrap" aria-label="Service overview">
+            <div class="service-overview-row"><div class="service-overview-accordion">
+                <a href="#consultancy"><img src="../img/Services/Enterprise network-01.jpg" alt="Consultancy service"><span>Consultancy</span></a><a href="#design-engineering"><img src="../img/Services/Data center solution-02.jpg" alt="Detailed design and engineering service"><span>Detailed Design &amp; Engineering</span></a><a href="#project-management"><img src="../img/Services/Data center preparation-05.jpg" alt="Project management service"><span>Project Management</span></a><a href="#system-integration"><img src="../img/Services/collaboration-06.jpg" alt="System integration and FAT service"><span>System Integration &amp; FAT</span></a><a href="#installation-training"><img src="../img/Services/Cyber security-03.jpg" alt="Installation and training service"><span>Installation &amp; Training</span></a>
+            </div><div class="service-overview-list"><h3>How we help</h3><ul><li>Consultancy</li><li>Detailed Design and Engineering</li><li>Project Management</li><li>System Integration and FAT</li><li>Installation and Training</li></ul></div></div>
+            <div class="service-overview-row service-overview-row--reverse"><div class="service-overview-list"><h3>Complete project support</h3><ul><li>Support, Operation and Maintenance</li><li>Network and infrastructure solutions</li><li>Data center readiness</li><li>Cybersecurity environments</li><li>Business continuity planning</li></ul></div><div class="service-overview-accordion">
+                <a href="#support-maintenance"><img src="../img/Services/Enterprise network-01.jpg" alt="Support, operation and maintenance service"><span>Support, Operation &amp; Maintenance</span></a><a href="#consultancy"><img src="../img/Services/Cyber security-03.jpg" alt="Technology consultancy service"><span>Technology Consultancy</span></a><a href="#design-engineering"><img src="../img/Services/Data center solution-02.jpg" alt="Infrastructure design service"><span>Infrastructure Design</span></a><a href="#system-integration"><img src="../img/Services/collaboration-06.jpg" alt="System integration service"><span>System Integration</span></a><a href="#installation-training"><img src="../img/Services/Data center preparation-05.jpg" alt="Technical implementation service"><span>Technical Implementation</span></a>
+            </div></div>
+        </section>
+        <section class="services-page-wrap services-details-new" aria-labelledby="services-details-title"><div class="services-details-new__heading"><h2 id="services-details-title">Services</h2><div class="services-rule-new" aria-hidden="true"></div></div>
+            <article class="service-detail-new" id="consultancy"><div><p class="service-detail-new__number">01 / CONSULTANCY</p><h3>Consultancy</h3><p>We help organizations turn business priorities into practical technology roadmaps. Our consultants assess your current environment, identify risks and opportunities, and shape a solution that balances performance, security, scalability and cost.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Enterprise network-01.jpg" alt="Commnex Solutions consultancy for enterprise networks"></div></article>
+            <article class="service-detail-new" id="design-engineering"><div><p class="service-detail-new__number">02 / DESIGN &amp; ENGINEERING</p><h3>Detailed Design &amp; Engineering</h3><p>From high-level architecture to detailed implementation drawings and documentation, our engineering team designs dependable systems around your operational requirements. Every detail is reviewed for integration, future expansion and maintainability.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Data center solution-02.jpg" alt="Detailed data center design and engineering"></div></article>
+            <article class="service-detail-new" id="project-management"><div><p class="service-detail-new__number">03 / PROJECT MANAGEMENT</p><h3>Project Management</h3><p>Our project managers coordinate people, vendors, schedules, risks and quality from kickoff to handover. Clear governance and regular reporting keep delivery aligned with scope, milestones and stakeholder expectations.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Data center preparation-05.jpg" alt="Commnex Solutions project management and preparation"></div></article>
+            <article class="service-detail-new" id="system-integration"><div><p class="service-detail-new__number">04 / SYSTEM INTEGRATION &amp; FAT</p><h3>System Integration &amp; FAT</h3><p>We integrate infrastructure, applications and security technologies into a coordinated operating environment. Factory Acceptance Testing verifies functionality and performance before deployment, reducing surprises during go-live.</p></div><div class="service-detail-new__visual"><img src="../img/Services/collaboration-06.jpg" alt="System integration and factory acceptance testing"></div></article>
+            <article class="service-detail-new" id="installation-training"><div><p class="service-detail-new__number">05 / INSTALLATION &amp; TRAINING</p><h3>Installation, Integrated System Testing &amp; Training</h3><p>Our field teams install and configure the solution, perform integrated system testing, and transfer operational knowledge to your staff. The result is a controlled handover supported by clear documentation and practical training.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Cyber security-03.jpg" alt="Installation, testing and training services"></div></article>
+            <article class="service-detail-new" id="support-maintenance"><div><p class="service-detail-new__number">06 / SUPPORT &amp; MAINTENANCE</p><h3>Support, Operation &amp; Maintenance</h3><p>We keep critical technology dependable after deployment with responsive support, proactive monitoring and lifecycle care. Our operation and maintenance services help teams protect availability, performance and business continuity.</p><div class="service-detail-new__lists"><div><h4>Support</h4><ul><li>Incident and request management</li><li>Remote and onsite assistance</li><li>Preventive health checks</li></ul></div><div><h4>Maintenance</h4><ul><li>Performance optimization</li><li>Configuration and patching</li><li>Lifecycle planning</li></ul></div></div></div><div class="service-detail-new__visual"><img src="../img/Services/Enterprise network-01.jpg" alt="IT support, operation and maintenance services"></div></article>
+        </section>
+    </main>
+
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div id="legacy-services-primary" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
@@ -176,7 +250,7 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
                                 Global Server Load-Balance (GSLB)<br>
                                 Intelligent Traffic Management (ITM)
 
-                                
+                                            <h1 class="display-3 text-white animated slideInRight">SERVICES</h1>
                                 </p>
                             </div>
                         </div>
@@ -280,7 +354,7 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div id="legacy-services-secondary" class="container-xxl py-5">
         <div class="container">
            
             <div class="row gy-5 gx-4">
@@ -375,65 +449,6 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
     <!-- Service End -->
 
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Testimonial</p>
-                <h1 class="display-5 mb-5">What Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="../img/testimonial-1.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="../img/testimonial-2.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="../img/testimonial-3.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -441,7 +456,7 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Our Office</h5>
                     <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p> -->
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+9665391767650</p> -->
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>Info@commnexsolutions.com</p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
@@ -490,7 +505,7 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark py-4">
         <div class="container text-center">
-            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Your Site Name</a>, All Right Reserved.
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Commnex Solutions</a>, All Right Reserved.
             </p>
             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
             <p class="mb-0">Designed By <a class="fw-semi-bold" href="#"> Code web</a> Distributed
@@ -515,7 +530,7 @@ At Commnex Solutions, our experienced and professional team is dedicated to supp
     <script src="../lib/counterup/counterup.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js?v=whatsapp"></script>
 </body>
 
 </html>
