@@ -1,17 +1,6 @@
 (function ($) {
     "use strict";
 
-    var whatsappNumber = '966539176765';
-    var whatsappButton = document.createElement('a');
-    whatsappButton.className = 'whatsapp-float';
-    whatsappButton.href = 'https://wa.me/' + whatsappNumber;
-    whatsappButton.target = '_blank';
-    whatsappButton.rel = 'noopener noreferrer';
-    whatsappButton.setAttribute('aria-label', 'Contact us on WhatsApp');
-    whatsappButton.title = 'Contact us on WhatsApp';
-    whatsappButton.innerHTML = '<i class="fab fa-whatsapp" aria-hidden="true"></i>';
-    document.body.appendChild(whatsappButton);
-
     // Spinner
     var spinner = function () {
         setTimeout(function () {

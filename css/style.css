@@ -14,47 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-.whatsapp-float {
-    position: fixed;
-    z-index: 1000;
-    bottom: 24px;
-    left: 22px;
-    display: grid;
-    width: 56px;
-    height: 56px;
-    place-items: center;
-    border: 3px solid #FFFFFF;
-    border-radius: 50%;
-    background: #25D366;
-    box-shadow: 0 6px 18px rgba(12, 28, 72, .24);
-    color: #FFFFFF;
-    font-size: 31px;
-    line-height: 1;
-    text-decoration: none;
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus-visible {
-    color: #FFFFFF;
-    transform: scale(1.08);
-    box-shadow: 0 8px 24px rgba(12, 28, 72, .3);
-    outline: none;
-}
-
-@media (max-width: 575.98px) {
-    .whatsapp-float {
-        bottom: 17px;
-        left: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 27px;
-    }
-}
-
-=======
->>>>>>> 98d0b33 (  edit  final)
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -1336,30 +1295,14 @@ h6,
 }
 
 .values-grid {
-<<<<<<< HEAD
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    align-items: stretch;
-=======
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
->>>>>>> 98d0b33 (  edit  final)
 }
 
 .value-card {
     display: flex;
-<<<<<<< HEAD
-    min-height: 360px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 34px 24px 30px;
-    border: 2px solid #3852A3;
-    border-radius: 16px;
-=======
     flex: 0 0 calc((100% - 60px) / 4);
     min-height: 430px;
     flex-direction: column;
@@ -1369,7 +1312,6 @@ h6,
     border: 2px solid #3852A3;
     border-radius: 0;
     clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%);
->>>>>>> 98d0b33 (  edit  final)
     text-align: center;
     transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -1408,28 +1350,17 @@ h6,
     max-width: 100%;
     margin: 0 0 15px;
     font-family: 'Rubik', sans-serif;
-<<<<<<< HEAD
-    font-size: 17px;
-=======
     font-size: 16px;
->>>>>>> 98d0b33 (  edit  final)
     font-weight: 700;
     line-height: 1.3;
     text-transform: uppercase;
 }
 
 .value-card p {
-<<<<<<< HEAD
-    max-width: 30ch;
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.65;
-=======
     max-width: 26ch;
     margin: 0;
     font-size: 12px;
     line-height: 1.55;
->>>>>>> 98d0b33 (  edit  final)
 }
 
 .value-card--logo {
@@ -1745,17 +1676,12 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-<<<<<<< HEAD
-    .values-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-=======
     .value-card {
         flex-basis: calc((100% - 20px) / 2);
     }
 
     .values-grid {
         gap: 20px;
->>>>>>> 98d0b33 (  edit  final)
     }
 }
 
@@ -1766,20 +1692,14 @@ h6,
     }
 
     .values-grid {
-<<<<<<< HEAD
-=======
         display: grid;
->>>>>>> 98d0b33 (  edit  final)
         grid-template-columns: minmax(0, 1fr);
         gap: 16px;
     }
 
     .value-card {
-<<<<<<< HEAD
-=======
         width: 100%;
         flex-basis: auto;
->>>>>>> 98d0b33 (  edit  final)
         min-height: 0;
         padding: 30px 22px 28px;
     }

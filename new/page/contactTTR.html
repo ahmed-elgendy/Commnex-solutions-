@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us - Commnex Solutions</title>
+<style>
+  :root{
+    --blue:#243D94;
+    --blue-light:#4a63c4;
+    --heading:#1a1a2e;
+    --text:#555;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif;
+    color:var(--text);
+    background:#fff;
+  }
+
+  .contact-wrap{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    min-height:720px;
+  }
+
+  /* LEFT PANEL */
+  .contact-left{
+    padding:70px 50px;
+    background:#fff;
+  }
+  .contact-left h1{
+    font-size:36px;
+    font-weight:800;
+    color:var(--heading);
+    line-height:1.2;
+    margin:0 0 40px 0;
+  }
+  .info-item{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    margin-bottom:30px;
+  }
+  .info-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .info-icon svg{ width:24px; height:24px; stroke:var(--blue); fill:none; }
+  .info-text .label{
+    font-size:13px;
+    color:#999;
+    margin-bottom:4px;
+  }
+  .info-text .value{
+    font-size:16px;
+    font-weight:700;
+    color:var(--heading);
+    line-height:1.5;
+  }
+
+  .map-embed{
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+    height:220px;
+  }
+  .map-embed iframe{
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  /* RIGHT PANEL */
+  .contact-right{
+    background:linear-gradient(135deg, #eceefa 0%, #e4e6f7 100%);
+    padding:70px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-right::after{
+    content:"";
+    position:absolute;
+    top:-100px; right:-120px;
+    width:340px; height:340px;
+    border-radius:50%;
+    background:rgba(36,61,148,0.06);
+  }
+  .contact-right h2{
+    font-size:26px;
+    font-weight:700;
+    color:var(--heading);
+    margin:0 0 34px 0;
+    position:relative;
+    z-index:2;
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    position:relative;
+    z-index:2;
+  }
+  .form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .form-group.full{ grid-column:1 / -1; }
+  .form-group label{
+    font-size:14px;
+    font-weight:700;
+    color:var(--heading);
+  }
+  .form-group label .req{ color:#e14b4b; }
+  .form-group input,
+  .form-group textarea{
+    border:1px solid #e2e2ee;
+    background:#fff;
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:14px;
+    font-family:inherit;
+    color:#333;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus{
+    border-color:var(--blue);
+  }
+  .form-group textarea{
+    resize:vertical;
+    min-height:120px;
+  }
+  .submit-btn{
+    grid-column:1 / -1;
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:15px 34px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    cursor:pointer;
+    width:fit-content;
+    transition:background .2s ease;
+  }
+  .submit-btn:hover{ background:#1b2f75; }
+
+  @media (max-width:900px){
+    .contact-wrap{ grid-template-columns:1fr; }
+    .contact-left, .contact-right{ padding:50px 24px; }
+    .form-grid{ grid-template-columns:1fr; }
+    .form-group.full{ grid-column:1; }
+  }
+
+  /* ===== FOOTER ===== */
+  .site-footer{
+    background:var(--blue-dark);
+    color:#dfe3f5;
+    margin-top:0;
+  }
+  .site-footer .footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:46px 20px 26px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+  .site-footer .footer-logo svg{
+    height:36px;
+    width:auto;
+  }
+  .site-footer .footer-logo svg .mark{ fill:#fff; }
+  .social-icons{
+    display:flex;
+    gap:14px;
+  }
+  .social-icons a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .social-icons a:hover{
+    background:var(--blue);
+    transform:translateY(-2px);
+  }
+  .social-icons svg{ width:16px; height:16px; fill:#fff; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.12);
+    text-align:center;
+    padding:16px 20px;
+    font-size:12.5px;
+    color:#b9c0e0;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{ padding-top:0; }
+  .navbar{
+    box-shadow:0 2px 14px rgba(0,0,0,0.06);
+    padding-top:.6rem;
+    padding-bottom:.6rem;
+  }
+  .navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .navbar-brand img{
+    height:44px;
+    width:auto;
+  }
+  .navbar-brand .brand-text{
+    font-size:19px;
+    font-weight:700;
+    color:#243D94;
+    line-height:1.1;
+  }
+  .navbar-nav .nav-link{
+    color:#333 !important;
+    font-weight:500;
+    font-size:15px;
+    padding:.6rem 1rem !important;
+    transition:color .2s ease;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active{
+    color:#243D94 !important;
+  }
+  .navbar-nav .nav-link.btn-contact{
+    background:#243D94;
+    color:#fff !important;
+    border-radius:6px;
+    padding:.55rem 1.4rem !important;
+    font-weight:600;
+    margin-left:.5rem;
+    transition:background .2s ease;
+  }
+  .navbar-nav .nav-link.btn-contact:hover{
+    background:#1b2f75;
+  }
+  .dropdown-menu{
+    border:none;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    border-radius:6px;
+  }
+  .dropdown-item{
+    font-size:13.5px;
+    padding:.6rem 1.2rem;
+  }
+  .dropdown-item:hover{
+    background:#f4f5f9;
+    color:#243D94;
+  }
+  @media (min-width:992px){
+    .dropdown:hover .dropdown-menu{
+      display:block;
+      margin-top:0;
+    }
+  }
+</style>
+
+
+
+
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+  <a href="../index.html" class="navbar-brand ps-5 me-0">
+    <img class="w-100" src="../img/logo.png" alt="Commnex Solutions">
+  </a>
+  <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+      <a href="../index.html" class="nav-item nav-link">Home</a>
+      <a href="./about.html" class="nav-item nav-link active">About Us</a>
+
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies & Solutions</a>
+        <div class="dropdown-menu bg-light m-0">
+          <a href="./enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+          <a href="./data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+          <a href="./cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+          <a href="./collaboration.html" class="dropdown-item">Collaboration</a>
+
+          <a href="./data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
+        </div>
+      </div>
+
+      <a href="./partnership.html" class="nav-item nav-link">Partners</a>
+      <a href="./service.html" class="nav-item nav-link">Services</a>
+      <a href="./contact.html" class="nav-item nav-link">Contact us</a>
+    </div>
+    <!-- <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a> -->
+  </div>
+</nav>
+<!-- Navbar End -->
+
+
+
+<div class="contact-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="contact-left">
+    <h1>Feel Free to Get in Touch</h1>
+
+    <div class="info-item">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="info-text">
+        <div class="label">Call Anytime</div>
+        <div class="value">+20 111 711 8799<br>+20 2 2610 8006<br>+20 2 2610 8006</div>
+      </div>
+    </div>
+
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="City / State / Country">
+                    </div>
+
+                    <!-- Notes / Message -->
+                    <div class="form-group">
+                        <label for="notes">Notes / Message</label>
+                        <textarea id="notes" name="notes" placeholder="Tell us more about your project or inquiry..."></textarea>
+                    </div>
+
+                    <!-- WhatsApp submit button -->
+                    <button type="submit" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        Send via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+    <div class="info-item">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="info-text">
+        <div class="label">Visit Now</div>
+        <div class="value">110 Al Merghani, Almazah,<br>Heliopolis, Cairo</div>
+      </div>
+    </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         4) COUNTERS — Same design as the homepage facts section
+         ========================================================== -->
+    <section class="counters-section">
+        <div class="counters-inner">
+            <div class="counter-box">
+                <i class="fas fa-certificate"></i>
+                <span class="counter-num" data-target="15" data-suffix="+">0</span>
+                <span>Years Experience</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-users-cog"></i>
+                <span class="counter-num" data-target="50" data-suffix="">0</span>
+                <span>Team Members</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-users"></i>
+                <span class="counter-num" data-target="150" data-suffix="+">0</span>
+                <span>Happy Clients</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-check-double"></i>
+                <span class="counter-num" data-target="150" data-suffix="+">0</span>
+                <span>Projects Done</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         5) FOOTER
+         ========================================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Commnex Solutions Logo">
+                Commnex Solutions
+            </div>
+
+            <!-- Social icons -->
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-4">Our Office</h5>
+        <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p> -->
+        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Info@commnexsolutions.com</p>
+        <div class="d-flex pt-3">
+          <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+          <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-4">Quick Links</h5>
+        <a class="btn btn-link" href="">About Us</a>
+        <a class="btn btn-link" href="">Contact Us</a>
+        <a class="btn btn-link" href="">Our Services</a>
+        <!-- <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a> -->
+      </div>
+      <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Friday</p>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <p class="mb-1">Saturday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div> -->
+      <div class="col-lg-3 col-md-6">
+        <!-- <h5 class="text-white mb-4">Commnex Solutions</h5> -->
+        <!-- <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+
+
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2026 Commnex Solutions. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================
+         JAVASCRIPT — WhatsApp Form + Hamburger + Counters
+         ========================================================== -->
+    <script>
+        // ---------- Mobile Hamburger Menu (vanilla JS) ----------
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function () {
+            const isOpen = navMenu.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close the mobile menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ---------- WhatsApp Form Submission ----------
+        // Replace with your WhatsApp number (without '+' or spaces), including country code
+
+        // -- Replace with your WhatsApp number --
+            const WHATSAPP_NUMBER = '966539176765';
+
+        function sendToWhatsApp(event) {
+            // 1) Prevent the default form submission behavior
+            event.preventDefault();
+
+            // 2) Gather field values
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const serviceType = document.getElementById('serviceType').value;
+            const address = document.getElementById('address').value.trim() || 'Not provided';
+            const notes = document.getElementById('notes').value.trim() || 'No notes';
+
+            // 3) Basic validation in case HTML5 validation is bypassed
+            if (!fullName || !phone || !serviceType) {
+                alert('Please fill in all required fields: Full Name, Phone Number, and Service Type.');
+                return;
+            }
+
+            // 4) Format a clean multi-line message
+            const message =
+                'New Lead from Website:\n' +
+                'Name: ' + fullName + '\n' +
+                'Phone: ' + phone + '\n' +
+                'Service: ' + serviceType + '\n' +
+                'Address: ' + address + '\n' +
+                'Notes: ' + notes;
+
+            // 5) URL-encode the message
+            const encodedMessage = encodeURIComponent(message);
+
+            // 6) Open WhatsApp with the encoded message
+            const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodedMessage;
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // ---------- Animated Counters (on scroll) ----------
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-num');
+
+            counters.forEach(function (counter) {
+                const target = parseInt(counter.getAttribute('data-target'), 10);
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const duration = 1800;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease-out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(eased * target);
+                    counter.textContent = current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + suffix;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // IntersectionObserver to trigger once when visible
+        const countersSection = document.querySelector('.counters-section');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(countersSection);
+        } else {
+            // Fallback: just show final values
+            document.querySelectorAll('.counter-num').forEach(function (c) {
+                c.textContent = c.getAttribute('data-target') + (c.getAttribute('data-suffix') || '');
+            });
+        }
+    </script>
+
+</body>
+</html>
