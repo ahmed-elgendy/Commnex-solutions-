@@ -64,6 +64,79 @@
         @keyframes partners-to-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
         @media (max-width: 800px) { .partners-intro { grid-template-columns: 1fr; } .partners-intro__image { max-width: 680px; } }
         @media (max-width: 520px) { .partners-shell { width: min(calc(100% - 32px), 1180px); } .partners-intro { padding-top: 56px; } .partner-group__heading { display: block; } .partner-group__heading p { margin-top: 5px; } .partner-logo-card { width: 142px; flex-basis: 142px; height: 78px; font-size: 13px; } .partner-logo-card i { font-size: 21px; } }
+   
+   
+   .logos-carousel-wrapper{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.logos-carousel-wrapper::before,
+.logos-carousel-wrapper::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.logos-carousel-wrapper::before{
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.logos-carousel-wrapper::after{
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.logos-carousel-track{
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-logos 20s linear infinite;
+}
+
+.logo-slide{
+  flex: 0 0 auto;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-slide img{
+  max-height: 60px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-slide img:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll-logos{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .logo-slide{ margin: 0 18px; }
+  .logo-slide img{ max-height: 40px; }
+}
+
+   
+   
+   
+   
+   
+   
     </style>
 </head>
 
@@ -119,8 +192,8 @@
                         <a href="data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
                         <a href="cybersecurity.html" class="dropdown-item">Cybersecurity</a>
                         <a href="collaboration.html" class="dropdown-item">Collaboration</a>
-                        <a href="../pages/404.html" class="dropdown-item">GPON & Structure Cabling Solution</a>
-                        <a href="../pages/404.html" class="dropdown-item">Light Current Solutions</a>
+                        <a href="light-current-solutions.html" class="dropdown-item">Light Current Solutions</a>
+
                         <a href="data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
                     </div>
                 </div>
@@ -155,115 +228,278 @@
             <div class="partners-intro__image"><img src="../img/Technonlogy & Solutions-20260325T103226Z-3-001/Technonlogy & Solutions/Data center solution-02.jpg" alt="Commnex Solutions technology partnership"></div>
             <div><p class="partners-kicker">Our partners</p><h2 id="partners-intro-title">Technology built on <span>trusted collaboration</span></h2><p class="partners-intro__copy">Commnex Solutions works with leading technology providers to bring dependable, scalable solutions to every project. Our partner ecosystem gives clients access to deep expertise across collaboration, cybersecurity, data centers, enterprise networks and light current technologies.</p></div>
         </section>
+
+
+
         <section class="partners-shell partners-groups" aria-label="Partner categories">
-            <div class="partner-group"><div class="partner-group__heading"><h2>Collaboration</h2><p>Connected workplaces</p></div><div class="partner-marquee"><div class="partner-marquee__track">
-                <a class="partner-logo-card" href="../page/collaboration.html" aria-label="Microsoft collaboration partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Cisco collaboration partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Apple collaboration partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Google collaboration partner"><i class="fab fa-google"></i>Google</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Dell collaboration partner"><i class="fab fa-dell"></i>Dell</a>
-                <a class="partner-logo-card" href="../page/collaboration.html" aria-label="Microsoft collaboration partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Cisco collaboration partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Apple collaboration partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Google collaboration partner"><i class="fab fa-google"></i>Google</a><a class="partner-logo-card" href="../page/collaboration.html" aria-label="Dell collaboration partner"><i class="fab fa-dell"></i>Dell</a>
-            </div></div></div>
-            <div class="partner-group"><div class="partner-group__heading"><h2>Cybersecurity Solution</h2><p>Protected by design</p></div><div class="partner-marquee"><div class="partner-marquee__track">
-                <a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="HP cybersecurity partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Cisco cybersecurity partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Microsoft cybersecurity partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Linux cybersecurity partner"><i class="fab fa-linux"></i>Linux</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="AWS cybersecurity partner"><i class="fab fa-aws"></i>AWS</a>
-                <a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="HP cybersecurity partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Cisco cybersecurity partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Microsoft cybersecurity partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="Linux cybersecurity partner"><i class="fab fa-linux"></i>Linux</a><a class="partner-logo-card" href="../page/cybersecurity.html" aria-label="AWS cybersecurity partner"><i class="fab fa-aws"></i>AWS</a>
-            </div></div></div>
-            <div class="partner-group"><div class="partner-group__heading"><h2>Data Center Solutions</h2><p>Resilient infrastructure</p></div><div class="partner-marquee"><div class="partner-marquee__track">
-                <a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Dell data center partner"><i class="fab fa-dell"></i>Dell</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Microsoft data center partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="HP data center partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="AWS data center partner"><i class="fab fa-aws"></i>AWS</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Linux data center partner"><i class="fab fa-linux"></i>Linux</a>
-                <a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Dell data center partner"><i class="fab fa-dell"></i>Dell</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Microsoft data center partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="HP data center partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="AWS data center partner"><i class="fab fa-aws"></i>AWS</a><a class="partner-logo-card" href="../page/data-center-solutions.html" aria-label="Linux data center partner"><i class="fab fa-linux"></i>Linux</a>
-            </div></div></div>
-            <div class="partner-group"><div class="partner-group__heading"><h2>Enterprise Network Solutions</h2><p>Always connected</p></div><div class="partner-marquee"><div class="partner-marquee__track">
-                <a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Cisco enterprise network partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Microsoft enterprise network partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Apple enterprise network partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Linux enterprise network partner"><i class="fab fa-linux"></i>Linux</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Google enterprise network partner"><i class="fab fa-google"></i>Google</a>
-                <a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Cisco enterprise network partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Microsoft enterprise network partner"><i class="fab fa-microsoft"></i>Microsoft</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Apple enterprise network partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Linux enterprise network partner"><i class="fab fa-linux"></i>Linux</a><a class="partner-logo-card" href="../page/enterprise-network.html" aria-label="Google enterprise network partner"><i class="fab fa-google"></i>Google</a>
-            </div></div></div>
-            <div class="partner-group"><div class="partner-group__heading"><h2>Light Current Solutions</h2><p>Smart systems</p></div><div class="partner-marquee"><div class="partner-marquee__track">
-                <a class="partner-logo-card" href="../page/service.html" aria-label="Apple light current solutions partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/service.html" aria-label="Google light current solutions partner"><i class="fab fa-google"></i>Google</a><a class="partner-logo-card" href="../page/service.html" aria-label="Cisco light current solutions partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/service.html" aria-label="HP light current solutions partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/service.html" aria-label="AWS light current solutions partner"><i class="fab fa-aws"></i>AWS</a>
-                <a class="partner-logo-card" href="../page/service.html" aria-label="Apple light current solutions partner"><i class="fab fa-apple"></i>Apple</a><a class="partner-logo-card" href="../page/service.html" aria-label="Google light current solutions partner"><i class="fab fa-google"></i>Google</a><a class="partner-logo-card" href="../page/service.html" aria-label="Cisco light current solutions partner"><i class="fa fa-network-wired"></i>Cisco</a><a class="partner-logo-card" href="../page/service.html" aria-label="HP light current solutions partner"><i class="fab fa-hp"></i>HP</a><a class="partner-logo-card" href="../page/service.html" aria-label="AWS light current solutions partner"><i class="fab fa-aws"></i>AWS</a>
-            </div></div></div>
-        </section>
-        <p class="partners-shell partners-note">Our partnerships help us deliver the right technology, expertise and support for every stage of your digital journey.</p>
-    </main>
-
-
-    <!-- Partnership Intro Start -->
-    <div id="legacy-partnership-intro" class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">Partnership</p>
-                    <h1 class="display-5 mb-4">Building Long-Term Technology Partnerships</h1>
-                    <p class="mb-4">
-                        Commnex Solutions is pleased to offer the leading-edge Information Technology
-                        products, services, and solutions based on high-quality, high-performance products
-                        from top technology vendors. Our partnerships enable your entity to achieve enhanced
-                        productivity, increased business agility, and greater competitive advantage.
-                    </p>
-                    <p class="mb-4">
-                        With more than 15 years of regional experience across Saudi Arabia and Egypt,
-                        we have built trusted relationships with market-leading vendors, ensuring our
-                        clients receive the most reliable, scalable, and cost-effective technology solutions.
-                    </p>
-                    <div class="row g-3 pt-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-handshake text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <p class="mb-2">Trusted Vendors</p>
-                                    <h5 class="mb-0">30+ Partners</h5>
-                                </div>
-                            </div>
+            <div class="partner-group">
+                <div class="partner-group__heading">
+        
+        
+        
+        
+                    <div class="partner-group">
+                        <div class="partner-group__heading">
+                            <h2>Enterprise-network</h2>
+                            <!-- <p>Connected workplaces</p> -->
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-award text-white"></i>
+                        <div class="partner-marquee">
+                            <div class="partner-marquee__track">
+                                <div class="logo-slide"><a href="#" aria-label="sc"><img
+                                            src="../img/partners/enterprise-network/Picture1.png" alt="Microsoft logo"
+                                            title="Microsoft"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                                        <img src="../img/partners/enterprise-network/Picture2.png" alt="Cisco logo"
+                                            title="Cisco"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture3.png" alt="Apple logo" title="Apple"></a>
                                 </div>
-                                <div class="ms-3">
-                                    <p class="mb-2">Regional Experience</p>
-                                    <h5 class="mb-0">15+ Years</h5>
+                                <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture4.png" alt="Google logo"
+                                            title="Google"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture5.png" alt="Dell logo" title="Dell"></a>
                                 </div>
+        
+                                <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture6.png" alt="Microsoft logo"
+                                            title="Microsoft"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture7.png" alt="Cisco logo"
+                                            title="Cisco"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                            src="../img/partners/enterprise-network/Picture8.png" alt="Apple logo"
+                                            title="Apple"></a></div>
+                               
+        
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid w-100" src="../img/Technonlogy & Solutions-20260325T103226Z-3-001/Technonlogy & Solutions/Data center solution-02.jpg" alt="">
+        
+        
                 </div>
             </div>
+        
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="partners-shell partners-groups" aria-label="Partner categories">
+    <div class="partner-group">
+        <div class="partner-group__heading">
+
+
+
+
+            <div class="partner-group">
+                <div class="partner-group__heading">
+                    <h2>Data-center-solutions</h2>
+                    <!-- <p>Connected workplaces</p> -->
+                </div>
+                <div class="partner-marquee">
+                    <div class="partner-marquee__track">
+                        <div class="logo-slide"><a href="#" aria-label="sc"><img
+                                    src="../img/partners/data-center-solutions/Picture1.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                                <img src="../img/partners/data-center-solutions/Picture10.png" alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture11.png" alt="Apple logo"
+                                    title="Apple"></a>
+                        </div>
+                        <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture12.png" alt="Google logo"
+                                    title="Google"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture13.png" alt="Dell logo"
+                                    title="Dell"></a>
+                        </div>
+
+                        <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture14.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture18.png" alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="../img/partners/data-center-solutions/Picture16.png" alt="Apple logo"
+                                    title="Apple"></a></div>
+
+
+
+
+                                    <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner"><img
+                                                src="../img/partners/data-center-solutions/Picture19.png" alt="Microsoft logo" title="Microsoft"></a></div>
+                                    <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                                src="../img/partners/data-center-solutions/Picture33.png" alt="Cisco logo" title="Cisco"></a></div>
+                                    <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                                src="../img/partners/data-center-solutions/Picture9.png" alt="Apple logo" title="Apple"></a></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
-    <!-- Partnership Intro End -->
+
+</section>
 
 
-    <!-- Partnership Logos Start -->
-    <div id="legacy-partnership-logos" class="container-fluid partnership-section py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Our Partners</p>
-                <h1 class="display-5 mb-0">Trusted Technology Partners</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="partners-shell partners-groups" aria-label="Partner categories">
+            <div class="partner-group">
+                <div class="partner-group__heading">
+             
+
+
+
+                    <div class="partner-group">
+                        <div class="partner-group__heading">
+                            <h2>cybersecurity</h2>
+                            <!-- <p>Connected workplaces</p> -->
+                        </div>
+                        <div class="partner-marquee">
+                            <div class="partner-marquee__track">
+                                <div class="logo-slide"><a href="#"
+                                        aria-label="sc"><img src="../img/partners/cybersecurity/Picture37.png"
+                                            alt="Microsoft logo" title="Microsoft"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                                    <img
+                                            src="../img/partners/cybersecurity/Picture1.png" alt="Cisco logo" title="Cisco"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture2.png" alt="Apple logo" title="Apple"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture20.png" alt="Google logo" title="Google"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture21.jpg" alt="Dell logo" title="Dell"></a></div>
+                    
+                                <div class="logo-slide"><a href="#"
+                                        aria-label="Microsoft collaboration partner"><img src="../img/partners/cybersecurity/Picture23.png"
+                                            alt="Microsoft logo" title="Microsoft"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture24.png" alt="Cisco logo" title="Cisco"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture25.png" alt="Apple logo" title="Apple"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture26.png" alt="Google logo" title="Google"></a></div>
+                                <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                            src="../img/partners/cybersecurity/Picture27.png" alt="Dell logo" title="Dell"></a></div>
+
+
+
+                        <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner">
+                            <img
+                                    src="../img/partners/cybersecurity/Picture28.png" alt="Microsoft logo" title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                    src="../img/partners/cybersecurity/Picture29.png"4 alt="Cisco logo" title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="../img/partners/cybersecurity/Picture31.png" alt="Apple logo" title="Apple"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                    src="../img/partners/cybersecurity/Picture32.png" alt="Google logo" title="Google"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                    src="../img/partners/cybersecurity/Picture35.png" alt="Dell logo" title="Dell"></a></div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+</div>
+</div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="partners-shell partners-groups" aria-label="Partner categories">
+    <div class="partner-group">
+        <div class="partner-group__heading">
+
+
+
+
+            <div class="partner-group">
+                <div class="partner-group__heading">
+                    <h2>Collaboratin
+</h2>
+                    <!-- <p>Connected workplaces</p> -->
+                </div>
+                <div class="partner-marquee">
+                    <div class="partner-marquee__track">
+                        <div class="logo-slide"><a href="#" aria-label="sc"><img
+                                    src="../img/partners/Collaboratin/Picture1.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                                <img src="../img/partners/Collaboratin/Picture38.png" alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="../img/partners/Collaboratin/Picture39.png" alt="Apple logo" title="Apple"></a>
+                        </div>
+          
+
+
+
+
+
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="partnership-marquee wow fadeInUp" data-wow-delay="0.2s">
-            <div class="partnership-track">
-                <div class="partner-logo"><i class="fab fa-microsoft"></i> Microsoft</div>
-                <div class="partner-logo"><i class="fa fa-network-wired"></i> Cisco</div>
-                <div class="partner-logo"><i class="fab fa-apple"></i> Apple</div>
-                <div class="partner-logo"><i class="fab fa-google"></i> Google</div>
-                <div class="partner-logo"><i class="fab fa-dell"></i> Dell</div>
-                <div class="partner-logo"><i class="fab fa-hp"></i> HP</div>
-                <div class="partner-logo"><i class="fab fa-aws"></i> AWS</div>
-                <div class="partner-logo"><i class="fab fa-linux"></i> Linux</div>
 
-                <div class="partner-logo"><i class="fab fa-microsoft"></i> Microsoft</div>
-                <div class="partner-logo"><i class="fa fa-network-wired"></i> Cisco</div>
-                <div class="partner-logo"><i class="fab fa-apple"></i> Apple</div>
-                <div class="partner-logo"><i class="fab fa-google"></i> Google</div>
-                <div class="partner-logo"><i class="fab fa-dell"></i> Dell</div>
-                <div class="partner-logo"><i class="fab fa-hp"></i> HP</div>
-                <div class="partner-logo"><i class="fab fa-aws"></i> AWS</div>
-                <div class="partner-logo"><i class="fab fa-linux"></i> Linux</div>
-            </div>
+
         </div>
     </div>
-    <!-- Partnership Logos End -->
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Partnership Benefits Start -->

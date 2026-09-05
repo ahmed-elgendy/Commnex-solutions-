@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us - Commnex Solutions</title>
+<style>
+  :root{
+    --blue:#243D94;
+    --blue-light:#4a63c4;
+    --heading:#1a1a2e;
+    --text:#555;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif;
+    color:var(--text);
+    background:#fff;
+  }
+
+  .contact-wrap{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    min-height:720px;
+  }
+
+  /* LEFT PANEL */
+  .contact-left{
+    padding:70px 50px;
+    background:#fff;
+  }
+  .contact-left h1{
+    font-size:36px;
+    font-weight:800;
+    color:var(--heading);
+    line-height:1.2;
+    margin:0 0 40px 0;
+  }
+  .info-item{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    margin-bottom:30px;
+  }
+  .info-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .info-icon svg{ width:24px; height:24px; stroke:var(--blue); fill:none; }
+  .info-text .label{
+    font-size:13px;
+    color:#999;
+    margin-bottom:4px;
+  }
+  .info-text .value{
+    font-size:16px;
+    font-weight:700;
+    color:var(--heading);
+    line-height:1.5;
+  }
+
+  .map-embed{
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+    height:220px;
+  }
+  .map-embed iframe{
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  /* RIGHT PANEL */
+  .contact-right{
+    background:linear-gradient(135deg, #eceefa 0%, #e4e6f7 100%);
+    padding:70px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-right::after{
+    content:"";
+    position:absolute;
+    top:-100px; right:-120px;
+    width:340px; height:340px;
+    border-radius:50%;
+    background:rgba(36,61,148,0.06);
+  }
+  .contact-right h2{
+    font-size:26px;
+    font-weight:700;
+    color:var(--heading);
+    margin:0 0 34px 0;
+    position:relative;
+    z-index:2;
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    position:relative;
+    z-index:2;
+  }
+  .form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .form-group.full{ grid-column:1 / -1; }
+  .form-group label{
+    font-size:14px;
+    font-weight:700;
+    color:var(--heading);
+  }
+  .form-group label .req{ color:#e14b4b; }
+  .form-group input,
+  .form-group textarea{
+    border:1px solid #e2e2ee;
+    background:#fff;
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:14px;
+    font-family:inherit;
+    color:#333;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus{
+    border-color:var(--blue);
+  }
+  .form-group textarea{
+    resize:vertical;
+    min-height:120px;
+  }
+  .submit-btn{
+    grid-column:1 / -1;
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:15px 34px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    cursor:pointer;
+    width:fit-content;
+    transition:background .2s ease;
+  }
+  .submit-btn:hover{ background:#1b2f75; }
+
+  @media (max-width:900px){
+    .contact-wrap{ grid-template-columns:1fr; }
+    .contact-left, .contact-right{ padding:50px 24px; }
+    .form-grid{ grid-template-columns:1fr; }
+    .form-group.full{ grid-column:1; }
+  }
+
+  /* ===== FOOTER ===== */
+  .site-footer{
+    background:var(--blue-dark);
+    color:#dfe3f5;
+    margin-top:0;
+  }
+  .site-footer .footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:46px 20px 26px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+  .site-footer .footer-logo svg{
+    height:36px;
+    width:auto;
+  }
+  .site-footer .footer-logo svg .mark{ fill:#fff; }
+  .social-icons{
+    display:flex;
+    gap:14px;
+  }
+  .social-icons a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .social-icons a:hover{
+    background:var(--blue);
+    transform:translateY(-2px);
+  }
+  .social-icons svg{ width:16px; height:16px; fill:#fff; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.12);
+    text-align:center;
+    padding:16px 20px;
+    font-size:12.5px;
+    color:#b9c0e0;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{ padding-top:0; }
+  .navbar{
+    box-shadow:0 2px 14px rgba(0,0,0,0.06);
+    padding-top:.6rem;
+    padding-bottom:.6rem;
+  }
+  .navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .navbar-brand img{
+    height:44px;
+    width:auto;
+  }
+  .navbar-brand .brand-text{
+    font-size:19px;
+    font-weight:700;
+    color:#243D94;
+    line-height:1.1;
+  }
+  .navbar-nav .nav-link{
+    color:#333 !important;
+    font-weight:500;
+    font-size:15px;
+    padding:.6rem 1rem !important;
+    transition:color .2s ease;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active{
+    color:#243D94 !important;
+  }
+  .navbar-nav .nav-link.btn-contact{
+    background:#243D94;
+    color:#fff !important;
+    border-radius:6px;
+    padding:.55rem 1.4rem !important;
+    font-weight:600;
+    margin-left:.5rem;
+    transition:background .2s ease;
+  }
+  .navbar-nav .nav-link.btn-contact:hover{
+    background:#1b2f75;
+  }
+  .dropdown-menu{
+    border:none;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    border-radius:6px;
+  }
+  .dropdown-item{
+    font-size:13.5px;
+    padding:.6rem 1.2rem;
+  }
+  .dropdown-item:hover{
+    background:#f4f5f9;
+    color:#243D94;
+  }
+  @media (min-width:992px){
+    .dropdown:hover .dropdown-menu{
+      display:block;
+      margin-top:0;
+    }
+  }
+</style>
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4">
+    <a href="index.html" class="navbar-brand">
+        <img src="https://tk-it.com/wp-content/uploads/2024/10/Screenshot_2024-10-08_123150-removebg-preview-e1728383598778.png" alt="Commnex Solutions logo">
+        <span class="brand-text">Commnex Solutions</span>
+    </a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="./page/about.html" class="nav-item nav-link">About Us</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies &amp; Solutions</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="./page/enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+                    <a href="./page/data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+                    <a href="./page/cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                    <a href="404.html" class="dropdown-item">Light Current Solutions</a>
+                    <a href="./page/data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
+                </div>
+            </div>
+            <a href="./page/partnership.html" class="nav-item nav-link">Partners</a>
+            <a href="./page/service.html" class="nav-item nav-link">Services</a>
+            <a href="./page/contact.html" class="nav-item nav-link btn-contact">Contact us</a>
+        </div>
+    </div>
+</nav>
+<!-- ===== /HEADER ===== -->
+
+<div class="contact-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="contact-left">
+    <h1>Feel Free to Get in Touch</h1>
+
+    <div class="info-item">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="info-text">
+        <div class="label">Call Anytime</div>
+        <div class="value">+20 111 711 8799<br>+20 2 2610 8006<br>+20 2 2610 8006</div>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      </div>
+      <div class="info-text">
+        <div class="label">Send Email</div>
+        <div class="value">info@commnexsolutions.com</div>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="info-text">
+        <div class="label">Visit Now</div>
+        <div class="value">110 Al Merghani, Almazah,<br>Heliopolis, Cairo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="contact-right">
+    <h2>Simple Contact Form</h2>
+    <form class="form-grid">
+      <div class="form-group">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" placeholder="First name here" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name <span class="req">*</span></label>
+        <input type="text" placeholder="Last name here" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" placeholder="Add email" required>
+      </div>
+      <div class="form-group">
+        <label>Subject <span class="req">*</span></label>
+        <input type="text" placeholder="How can we help you?" required>
+      </div>
+      <div class="form-group full">
+        <label>Comments / Questions <span class="req">*</span></label>
+        <textarea placeholder="Comments" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">SEND MESSAGE</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo" aria-label="Home">
+      <svg viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+        <circle class="mark" cx="20" cy="20" r="16" fill="#fff"/>
+        <path d="M13 20l5 5 9-11" stroke="#1b2f75" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    <p>© All Copyright 2026 by Commnex Solutions</p>
+  </div>
+</footer>
+<!-- ===== /FOOTER ===== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -36,6 +36,22 @@
            Brand Primary Color: #243D94
            ========================================================== */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
         /* ---------- Base ---------- */
         .en-section {
             font-family: 'Rubik', 'Segoe UI', Tahoma, 'Helvetica Neue', Arial, sans-serif;
@@ -384,6 +400,147 @@
         .page-header .breadcrumb-item a {
             color: var(--light);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .partners-page { --partners-blue: #243D94; --partners-ink: #18213b; --partners-muted: #657089; --partners-pale: #f5f7fb; overflow: hidden; font-family: 'Poppins', sans-serif; }
+        .partners-page p { font-family: 'Poppins', sans-serif; }
+        .partners-page-header { display: grid; min-height: 200px; margin-bottom: 0 !important; place-items: center; background: linear-gradient(90deg, rgba(22, 39, 96, .9), rgba(36, 61, 148, .48)), url('../img/carousel-1.jpg') center / cover no-repeat !important; text-align: center; }
+            .partners-legacy-header { display: none; }
+        .partners-legacy-header, #legacy-partnership-intro, #legacy-partnership-logos, #legacy-partnership-benefits { display: none; }
+        .partners-page-header h1 { margin: 0; color: #FFFFFF !important; font-family: 'Poppins', sans-serif; font-size: clamp(34px, 5vw, 58px); font-weight: 700; letter-spacing: .05em; line-height: 1.1; text-align: center; }
+        .partners-shell { width: min(calc(100% - 40px), 1180px); margin: 0 auto; }
+        .partners-intro { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 7vw, 90px); align-items: center; padding: clamp(64px, 9vw, 116px) 0 78px; }
+        .partners-intro__image { overflow: hidden; border-radius: 16px; }
+        .partners-intro__image img { display: block; width: 100%; aspect-ratio: 1.2; object-fit: cover; }
+        .partners-kicker { margin: 0 0 12px; color: var(--partners-blue); font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+        .partners-intro h2 { margin: 0 0 18px; color: var(--partners-ink); font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.18; }
+        .partners-intro h2 span { color: var(--partners-blue); }
+        .partners-intro__copy { margin: 0; color: var(--partners-muted); font-size: 15px; line-height: 1.9; }
+        .partners-groups { padding-bottom: 76px; }
+        .partner-group { padding: 34px 0; }
+        .partner-group__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 17px; }
+        .partner-group__heading h2 { margin: 0; color: var(--partners-ink); font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; }
+        .partner-group__heading p { margin: 0; color: var(--partners-blue); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+        .partner-marquee { position: relative; overflow: hidden; padding: 10px 0; -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); }
+        .partner-marquee__track { display: flex; width: max-content; animation: partners-to-left 34s linear infinite; animation-play-state: running; will-change: transform; }
+        .partner-group:nth-child(even) .partner-marquee__track { animation-name: partners-to-right; }
+        .partner-marquee:hover .partner-marquee__track, .partner-marquee:focus-within .partner-marquee__track { animation-play-state: paused; }
+        .partner-logo-card { display: flex; width: 166px; height: 92px; flex: 0 0 166px; align-items: center; justify-content: center; gap: 10px; margin-right: 14px; border: 1px solid #e1e5ef; border-radius: 8px; background: #fff; color: #8c94a5; font-size: 15px; font-weight: 700; filter: grayscale(1); transition: color .25s ease, border-color .25s ease, filter .25s ease, transform .25s ease; }
+        .partner-logo-card i { font-size: 25px; }
+        .partner-logo-card:hover, .partner-logo-card:focus-visible { border-color: var(--partners-blue); color: var(--partners-blue); filter: grayscale(0); transform: translateY(-3px); outline: none; }
+        .partners-note { margin: 0 auto; padding: 0 0 90px; color: var(--partners-muted); font-size: 15px; line-height: 1.8; text-align: center; }
+        @keyframes partners-to-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes partners-to-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+        @media (max-width: 800px) { .partners-intro { grid-template-columns: 1fr; } .partners-intro__image { max-width: 680px; } }
+        @media (max-width: 520px) { .partners-shell { width: min(calc(100% - 32px), 1180px); } .partners-intro { padding-top: 56px; } .partner-group__heading { display: block; } .partner-group__heading p { margin-top: 5px; } .partner-logo-card { width: 142px; flex-basis: 142px; height: 78px; font-size: 13px; } .partner-logo-card i { font-size: 21px; } }
+   
+   
+   .logos-carousel-wrapper{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.logos-carousel-wrapper::before,
+.logos-carousel-wrapper::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.logos-carousel-wrapper::before{
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.logos-carousel-wrapper::after{
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.logos-carousel-track{
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-logos 20s linear infinite;
+}
+
+.logo-slide{
+  flex: 0 0 auto;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-slide img{
+  max-height: 60px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-slide img:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll-logos{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .logo-slide{ margin: 0 18px; }
+  .logo-slide img{ max-height: 40px; }
+}
+
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 
@@ -439,7 +596,8 @@
                         <a href="data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
                         <a href="cybersecurity.html" class="dropdown-item">Cybersecurity</a>
                         <a href="collaboration.html" class="dropdown-item">Collaboration</a>
-                        
+                      <a href="light-current-solutions.html" class="dropdown-item">Light Current Solutions</a>
+
                         <a href="data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
                     </div>
                 </div>
@@ -525,6 +683,128 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Data Center Services Start -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <!-- <p class="fw-medium text-uppercase text-primary mb-2">What We Deliver</p> -->
+            <h1 class="display-5 mb-4">Enterprise Network
+</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-server fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">LAN Switching</h5>
+                    <p class="mb-0">Provides fast and reliable connectivity between devices within local area networks.
+                    Improves network performance, data distribution, and overall connectivity stability.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-database fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Data Center Switching</h5>
+                    <p class="mb-0">Advanced switching solutions designed to connect servers and systems efficiently within data centers.
+                    Deliver high-speed connectivity, scalability, and low latency for critical business operations.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-project-diagram fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Routing </h5>
+                    <p class="mb-0">Manages and directs data traffic between different networks through the most efficient paths.
+                    Enhances network performance, reliability, and secure communication across multiple locations.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-layer-group fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Wireless Technologies</h5>
+                    <p class="mb-0">Provides fast, flexible, and reliable wireless connectivity for users and connected devices.
+                    Ensures wide coverage, stable performance, and efficient network management.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-boxes-stacked fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Software-Defined Network (SDN)</h5>
+                    <p class="mb-0">A modern networking approach that separates network management from the underlying infrastructure.
+                    Enables centralized control, automation, improved performance, and greater network flexibility.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-cloud fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">SD-WAN (ADC)</h5>
+                    <p class="mb-0">Smart solutions for managing and connecting distributed branches across different WAN environments.
+                    Optimizes connectivity, improves application performance, and reduces infrastructure costs.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-sync-alt fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">WAN Optimization</h5>
+                    <p class="mb-0">Technologies designed to improve data transfer performance across wide area networks.
+                    Reduces latency and bandwidth usage while accelerating applications and improving user experience.
+                    
+                </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-clipboard-list fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Network Management</h5>
+                    <p class="mb-0">Comprehensive solutions for monitoring, managing, and optimizing network performance from a centralized platform.
+                    Provides real-time visibility and helps identify and resolve network issues efficiently.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="text-center border rounded p-4 h-100">
+                    <i class="fa fa-chart-line fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-2">Network Packet Broker</h5>
+                    <p class="mb-0">Specialized solutions that intelligently distribute and manage network traffic between monitoring and security tools.
+                    Enhances network visibility, improves tool efficiency, and strengthens overall network security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Center Services End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ==========================================================
          PARTNERS / LOGOS — CSS-Only Infinite Marquee
