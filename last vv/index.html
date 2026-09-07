@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Commnex solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css?v=nav-order" rel="stylesheet">
+
+
+
+
+<style>
+    .partners-page {
+        --partners-blue: #243D94;
+        --partners-ink: #18213b;
+        --partners-muted: #657089;
+        --partners-pale: #f5f7fb;
+        overflow: hidden;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .partners-page p {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .partners-page-header {
+        display: grid;
+        min-height: 200px;
+        margin-bottom: 0 !important;
+        place-items: center;
+        background: linear-gradient(90deg, rgba(22, 39, 96, .9), rgba(36, 61, 148, .48)), url('../img/carousel-1.jpg') center / cover no-repeat !important;
+        text-align: center;
+    }
+
+    .partners-legacy-header {
+        display: none;
+    }
+
+    .partners-legacy-header,
+    #legacy-partnership-intro,
+    #legacy-partnership-logos,
+    #legacy-partnership-benefits {
+        display: none;
+    }
+
+    .partners-page-header h1 {
+        margin: 0;
+        color: #FFFFFF !important;
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(34px, 5vw, 58px);
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .partners-shell {
+        width: min(calc(100% - 40px), 1180px);
+        margin: 0 auto;
+    }
+
+    .partners-intro {
+        display: grid;
+        grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+        gap: clamp(32px, 7vw, 90px);
+        align-items: center;
+        padding: clamp(64px, 9vw, 116px) 0 78px;
+    }
+
+    .partners-intro__image {
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    .partners-intro__image img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.2;
+        object-fit: cover;
+    }
+
+    .partners-kicker {
+        margin: 0 0 12px;
+        color: var(--partners-blue);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+    }
+
+    .partners-intro h2 {
+        margin: 0 0 18px;
+        color: var(--partners-ink);
+        font-size: clamp(30px, 4vw, 48px);
+        font-weight: 700;
+        line-height: 1.18;
+    }
+
+    .partners-intro h2 span {
+        color: var(--partners-blue);
+    }
+
+    .partners-intro__copy {
+        margin: 0;
+        color: var(--partners-muted);
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .partners-groups {
+        padding-bottom: 76px;
+    }
+
+    .partner-group {
+        padding: 34px 0;
+    }
+
+    .partner-group__heading {
+          display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 17px;
+    }
+
+    .partner-group__heading h2 {
+        margin: 0;
+        color: var(--partners-ink);
+        font-size: clamp(20px, 2.5vw, 28px);
+        font-weight: 700;
+    }
+
+    .partner-group__heading p {
+        margin: 0;
+        color: var(--partners-blue);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    .partner-marquee {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 0;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+        mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+    }
+
+    .partner-marquee__track {
+        display: flex;
+        width: max-content;
+        animation: partners-to-left 34s linear infinite;
+        animation-play-state: running;
+        will-change: transform;
+    }
+
+    .partner-group:nth-child(even) .partner-marquee__track {
+        animation-name: partners-to-right;
+    }
+
+    .partner-marquee:hover .partner-marquee__track,
+    .partner-marquee:focus-within .partner-marquee__track {
+        animation-play-state: paused;
+    }
+
+    .partner-logo-card {
+        display: flex;
+        width: 166px;
+        height: 92px;
+        flex: 0 0 166px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-right: 14px;
+        border: 1px solid #e1e5ef;
+        border-radius: 8px;
+        background: #fff;
+        color: #8c94a5;
+        font-size: 15px;
+        font-weight: 700;
+        filter: grayscale(1);
+        transition: color .25s ease, border-color .25s ease, filter .25s ease, transform .25s ease;
+    }
+
+    .partner-logo-card i {
+        font-size: 25px;
+    }
+
+    .partner-logo-card:hover,
+    .partner-logo-card:focus-visible {
+        border-color: var(--partners-blue);
+        color: var(--partners-blue);
+        filter: grayscale(0);
+        transform: translateY(-3px);
+        outline: none;
+    }
+
+    .partners-note {
+        margin: 0 auto;
+        padding: 0 0 90px;
+        color: var(--partners-muted);
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    @keyframes partners-to-left {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes partners-to-right {
+        from {
+            transform: translateX(-50%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: 800px) {
+        .partners-intro {
+            grid-template-columns: 1fr;
+        }
+
+        .partners-intro__image {
+            max-width: 680px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .partners-shell {
+            width: min(calc(100% - 32px), 1180px);
+        }
+
+        .partners-intro {
+            padding-top: 56px;
+        }
+
+        .partner-group__heading {
+            display: block;
+        }
+
+        .partner-group__heading p {
+            margin-top: 5px;
+        }
+
+        .partner-logo-card {
+            width: 142px;
+            flex-basis: 142px;
+            height: 78px;
+            font-size: 13px;
+        }
+
+        .partner-logo-card i {
+            font-size: 21px;
+        }
+    }
+
+
+    .logos-carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .logos-carousel-wrapper::before,
+    .logos-carousel-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .logos-carousel-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, #ffffff, transparent);
+    }
+
+    .logos-carousel-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, #ffffff, transparent);
+    }
+
+    .logos-carousel-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: scroll-logos 20s linear infinite;
+    }
+
+    .logo-slide {
+        flex: 0 0 auto;
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-slide img {
+        max-height: 60px;
+        width: auto;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    .logo-slide img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    @keyframes scroll-logos {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* موبايل */
+    @media (max-width: 768px) {
+        .logo-slide {
+            margin: 0 18px;
+        }
+
+        .logo-slide img {
+            max-height: 40px;
+        }
+    }
+
+
+</style>
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+966539176765</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="index.html" class="navbar-brand ps-5 me-0"><img class="w-100" src="img/logo.png" alt="Commnex Solutions"></a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="./page/about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies &amp; Solutions</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="./page/enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+                        <a href="./page/data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+                        <a href="./page/cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                        <a href="404.html" class="dropdown-item">Light Current Solutions</a>
+                        <a href="./page/data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
+                    </div>
+                </div>
+                <a href="./page/partnership.html" class="nav-item nav-link">Partners</a>
+                <a href="./page/service.html" class="nav-item nav-link">Services</a>
+                <a href="./page/contact.html" class="nav-item nav-link">Contact us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Technology solutions">
+                    <div class="carousel-caption"><div class="container"><div class="row justify-content-center"><div class="col-lg-10 text-start">
+                        <h1 class="display-1 text-white mb-5">Commnex Solutions is<br>a leading IT solutions<br>provider and system integrator</h1>
+                        <a href="./page/contact.html" class="btn btn-primary py-3 px-5">Contact Now</a>
+                    </div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6"><div class="row gx-3 h-100"><div class="col-6 align-self-start"><img class="img-fluid" src="img/Technonlogy & Solutions-20260325T103226Z-3-001/Technonlogy & Solutions/collaboration-06.jpg" alt=""></div><div class="col-6 align-self-end"><img class="img-fluid" src="img/about-2.jpg" alt=""></div></div></div>
+                <div class="col-lg-6">
+                    <p class="fw-medium text-uppercase text-primary mb-2">About Us</p>
+                    <h1 class="display-5 mb-4">Commnex Solutions</h1>
+                    <p class="mb-4">Commnex Solutions is a leading IT Solution providers, IT System Integrator, and Professional / PM Service Provider, with calibers accumulating more than 15 years' experience in Saudi Arabia, Egypt, and the region.
+<br><br>
+Commnex Solutions is pleased to offer the leading-edge Information Technology products, services, and solutions based on high-quality, high-performance products from top technology vendors that can help your entity achieve enhanced productivity, increased business agility, and greater competitive advantage.
+
+                    </p>
+                    <!-- <div class="d-flex align-items-center mb-4">
+                        <div class="flex-shrink-0 bg-primary p-4">
+                            <h1 class="display-2">+15</h1>
+                            <h5 class="text-white">Years of</h5>
+                            <h5 class="text-white">Experience</h5>
+                        </div>
+                        <div class="ms-4">
+                            <p><i class="fa fa-check text-primary me-2"></i>Power & Energy</p>
+                            <p><i class="fa fa-check text-primary me-2"></i>Civil Engineering</p>
+                            <p><i class="fa fa-check text-primary me-2"></i>Chemical Engineering</p>
+                            <p><i class="fa fa-check text-primary me-2"></i>Mechanical Engineering</p>
+                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>Oil & Gas Engineering</p>
+                        </div>
+                    </div> -->
+                    <div class="row pt-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-envelope-open text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <p class="mb-2">Email us</p>
+                                    <h5 class="mb-0">Info@commnexsolutions.com</h5>
+                                </div>
+                            </div>
+<br><br>
+            <a href="./page/about.html" class="btn btn-primary py-3 px-5 animated slideInRight"> More About Us </a>
+
+
+                        </div>
+
+
+
+
+
+                        <!-- <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-phone-alt text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <p class="mb-2">Call us</p>
+                                    <h5 class="mb-0">+966539176765</h5>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Company Overview Start -->
+    <section class="company-overview" aria-labelledby="company-overview-title">
+        <div class="company-overview__heading">
+            <h2 id="company-overview-title"><span>Commnex Solutions</span> COMPANY OVERVIEW</h2>
+            <p>We combine practical expertise, dependable technology and thoughtful delivery to help organizations move forward.</p>
+            <p>From project planning to long-term support, every solution is built around the people and goals it serves.</p>
+        </div>
+        <div class="company-overview__cards">
+            <article class="company-overview__card">
+                <img src="img/Technonlogy & Solutions-20260325T103226Z-3-001/Technonlogy & Solutions/collaboration-06.jpg" alt="Commnex Solutions delivering successful technology projects">
+                <div class="company-overview__overlay">
+                    <h3>Delivering Success</h3>
+                    <p>Our services and solutions are delivered efficiently, ensuring they are tailored to meet customer needs while remaining effective.</p>
+                </div>
+            </article>
+            <article class="company-overview__card">
+                <img src="img/about-2.jpg" alt="Technology infrastructure designed for future growth">
+                <div class="company-overview__overlay">
+                    <h3>Future-Focused</h3>
+                    <p>Our solutions are designed to adapt to future growth and evolving standards, ensuring they are adaptable and ready for future needs.</p>
+                </div>
+            </article>
+            <article class="company-overview__card">
+                <img src="img/feature.jpg" alt="Commnex Solutions team managing complex technology solutions">
+                <div class="company-overview__overlay">
+                    <h3>Our Strengths</h3>
+                    <p>Our team specializes in integrated solutions involving multiple complex technologies, ensuring they can handle projects of varying scales and complexities.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Company Overview End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts my-5 p-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="text-center border p-5">
+                    <i class="fa fa-certificate fa-3x text-white mb-3"></i>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">15</h1>
+                    <span class="fs-5 fw-semi-bold text-white">Years Experience</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="text-center border p-5">
+                    <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">50</h1>
+                    <span class="fs-5 fw-semi-bold text-white">Team Members</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center border p-5">
+                    <i class="fa fa-users fa-3x text-white mb-3"></i>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">150</h1>
+                    <span class="fs-5 fw-semi-bold text-white">Happy Clients</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="text-center border p-5">
+                    <i class="fa fa-check-double fa-3x text-white mb-3"></i>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">150</h1>
+                    <span class="fs-5 fw-semi-bold text-white">Projects Done</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+<!--
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Simplicity</h4>
+                                    <span>
+                                        
+                                        Simplicity has always been the secret! We adopt the ‘keep it simple’ approach within everything related to our business: our marketing, our business model, our products, and even our office space.
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Commitment</h4>
+                                    <span>
+                                        
+                                        We’re committed to success! The success of our teams, our vision and mission, and above all the success of our clients and partners. Our commitment means that we work with a sense of urgency to everything that concerns our teams and clients.
+
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Integrity</h4>
+                                    <span>
+                                        
+                                      Integrity, We prioritize transparency and working with integrity! To us, integrity means we fearlessly go for the non-easy moral decision and owning every choice we make. We do invest wholeheartedly in our work and we choose to be straightforward with both our employees and our clients
+
+                                    
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                 <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Prioritizing our Customers</h4>
+                                    <span>
+                                        
+Our clients’ satisfaction is what keeps us going and surpassing their expectations is our goal. Regardless of how big or easy the project we’re working on is, we dedicate the highest calibers for the best results. This is the belief of every and each person within our organization.
+
+                                    
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                          <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Inclusion</h4>
+                                    <span>
+                                        
+                                     In creating a sense of belonging and inviting all points of view and suggestions as well as offering a fair access to opportunities and assets for every person within our organization.
+
+                                    
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                          <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Innovation</h4>
+                                    <span>
+                                        
+                            Innovation is not limited to a specific group of people within our entity.
+                            We strive for perfection which means we always keep an open mind and provide all the possible learning opportunities.
+
+                                    
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                          <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Integrity</h4>
+                                    <span>
+                                        
+                                      Integrity, We prioritize transparency and working with integrity! To us, integrity means we fearlessly go for the non-easy moral decision and owning every choice we make. We do invest wholeheartedly in our work and we choose to be straightforward with both our employees and our clients
+
+                                    
+                                    
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                            allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <!-- Service Start -->
+    <section class="services-showcase" aria-labelledby="services-title">
+        <div class="services-showcase__inner">
+            <div class="services-showcase__copy">
+                <p class="services-showcase__eyebrow">Our Services</p>
+                <h2 id="services-title"><span>Commnex Solutions</span> Services</h2>
+                <p class="services-showcase__intro">At <span>Commnex Solutions</span> We Pride Ourselves In Professional Services</p>
+                <ul class="services-showcase__list">
+                    <li>Consultancy</li>
+                    <li>Detailed Design and Engineering</li>
+                    <li>Project Management</li>
+                    <li>System Integration and Factory Acceptance Test</li>
+                    <li>Installation, Integrated System Testing and Training</li>
+                    <li>Support, Operation and Maintenance</li>
+                </ul>
+                <a class="services-showcase__button" href="./page/service.html">Read More <span aria-hidden="true">&#8594;</span></a>
+            </div>
+
+            <div class="services-showcase__gallery" aria-label="Services gallery">
+                <a class="service-slice" href="./page/service.html" aria-label="Consultancy">
+                    <img src="img/Services/Enterprise network-01.jpg" alt="Consultancy and enterprise network services">
+                    <span>Consultancy</span>
+                </a>
+                <a class="service-slice" href="./page/enterprise-network.html" aria-label="Detailed Design and Engineering">
+                    <img src="img/Services/Data center solution-02.jpg" alt="Detailed design and data center engineering">
+                    <span>Detailed Design and Engineering</span>
+                </a>
+                <a class="service-slice" href="./page/data-center-solutions.html" aria-label="Project Management">
+                    <img src="img/Services/Data center preparation-05.jpg" alt="Project management and data center preparation">
+                    <span>Project Management</span>
+                </a>
+                <a class="service-slice" href="./page/data-center-solutions.html" aria-label="System Integration and Factory Acceptance Test">
+                    <img src="img/Services/collaboration-06.jpg" alt="System integration and factory acceptance testing">
+                    <span>System Integration and Factory Acceptance Test</span>
+                </a>
+                <a class="service-slice" href="./page/cybersecurity.html" aria-label="Installation, Integrated System Testing and Training">
+                    <img src="img/Services/Cyber security-03.jpg" alt="Installation, integrated system testing and training">
+                    <span>Installation, Integrated System Testing and Training</span>
+                </a>
+                <a class="service-slice" href="./page/service.html" aria-label="Support, Operation and Maintenance">
+                    <img src="img/Services/Enterprise network-01.jpg" alt="Support, operation and maintenance services">
+                    <span>Support, Operation and Maintenance</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Service End -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="partners-shell partners-groups" aria-label="Partner categories">
+    <div class="partner-group">
+        <div class="partner-group__heading">
+
+
+
+
+            <div class="partner-group">
+                <div class="partner-group__heading">
+                    <h2>Partnership</h2>
+                    <!-- <p>Connected workplaces</p> -->
+                </div>
+                <div class="partner-marquee">
+                    <div class="partner-marquee__track">
+                        <div class="logo-slide"><a href="#" aria-label="sc"><img
+                                    src="img/partners/cybersecurity/Picture37.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                                <img src="img/partners/cybersecurity/Picture1.png" alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture2.png" alt="Apple logo" title="Apple"></a>
+                        </div>
+                        <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture20.png" alt="Google logo"
+                                    title="Google"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture21.jpg" alt="Dell logo" title="Dell"></a>
+                        </div>
+
+                        <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture23.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture24.png" alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture25.png" alt="Apple logo"
+                                    title="Apple"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture26.png" alt="Google logo"
+                                    title="Google"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture27.png" alt="Dell logo" title="Dell"></a>
+                        </div>
+
+
+
+                        <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner">
+                                <img src="img/partners/cybersecurity/Picture28.png" alt="Microsoft logo"
+                                    title="Microsoft"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture29.png" 4 alt="Cisco logo"
+                                    title="Cisco"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture31.png" alt="Apple logo"
+                                    title="Apple"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Google collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture32.png" alt="Google logo"
+                                    title="Google"></a></div>
+                        <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
+                                    src="img/partners/cybersecurity/Picture35.png" alt="Dell logo" title="Dell"></a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+   
+
+    </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.3s">
+        <a href="./page/partnership.html" class="btn btn-primary py-3 px-5">Read More</a>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Partnership Start -->
+    <!-- <section class="container-fluid partnership-section homepage-partners py-5" aria-labelledby="trusted-partners-title">
+        <div class="container">
+            <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Partnership</p>
+                <h1 id="trusted-partners-title" class="display-5 mb-0">Our Trusted Partners</h1>
+            </div>
+        </div>
+        <div class="partnership-marquee wow fadeInUp" data-wow-delay="0.2s">
+            <div class="partnership-track">
+                <div class="partner-logo"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="partner-logo"><i class="fa fa-network-wired"></i> Cisco</div>
+                <div class="partner-logo"><i class="fab fa-apple"></i> Apple</div>
+                <div class="partner-logo"><i class="fab fa-google"></i> Google</div>
+                <div class="partner-logo"><i class="fab fa-dell"></i> Dell</div>
+                <div class="partner-logo"><i class="fab fa-hp"></i> HP</div>
+                <div class="partner-logo"><i class="fab fa-aws"></i> AWS</div>
+                <div class="partner-logo"><i class="fab fa-linux"></i> Linux</div>
+
+                <div class="partner-logo"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="partner-logo"><i class="fa fa-network-wired"></i> Cisco</div>
+                <div class="partner-logo"><i class="fab fa-apple"></i> Apple</div>
+                <div class="partner-logo"><i class="fab fa-google"></i> Google</div>
+                <div class="partner-logo"><i class="fab fa-dell"></i> Dell</div>
+                <div class="partner-logo"><i class="fab fa-hp"></i> HP</div>
+                <div class="partner-logo"><i class="fab fa-aws"></i> AWS</div>
+                <div class="partner-logo"><i class="fab fa-linux"></i> Linux</div>
+            </div>
+        </div>
+        <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.3s">
+            <a href="./page/partnership.html" class="btn btn-primary py-3 px-5">Read More</a>
+        </div>
+    </section> -->
+    <!-- Partnership End -->
+
+
+    <!-- Project Start -->
+    <!-- <div class="container-fluid bg-dark pt-5 my-5 px-0">
+        <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="fw-medium text-uppercase text-primary mb-2">Our Projects</p>
+            <h1 class="display-5 text-white mb-5">See What We Have Completed Recently</h1>
+        </div>
+        <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s">
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-1.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Auto Engineering</h5>
+                </div>
+            </a>
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-2.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Civil Engineering</h5>
+                </div>
+            </a>
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-3.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Gas Engineering</h5>
+                </div>
+            </a>
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-4.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Power Engineering</h5>
+                </div>
+            </a>
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-5.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Energy Engineering</h5>
+                </div>
+            </a>
+            <a class="project-item" href="">
+                <img class="img-fluid" src="img/project-6.jpg" alt="">
+                <div class="project-title">
+                    <h5 class="text-primary mb-0">Water Engineering</h5>
+                </div>
+            </a>
+        </div>
+    </div> -->
+    <!-- Project End -->
+
+
+    <!-- Team Start -->
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Our Team</p>
+                <h1 class="display-5 mb-5">Dedicated Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                                <i class="fa fa-2x fa-share text-white"></i>
+                            </div>
+                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                                style="height: 90px;">
+                                <h5>Rob Miller</h5>
+                                <span class="text-primary">CEO & Founder</span>
+                                <div class="team-social">
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                                <i class="fa fa-2x fa-share text-white"></i>
+                            </div>
+                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                                style="height: 90px;">
+                                <h5>Adam Crew</h5>
+                                <span class="text-primary">Project Manager</span>
+                                <div class="team-social">
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                                <i class="fa fa-2x fa-share text-white"></i>
+                            </div>
+                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                                style="height: 90px;">
+                                <h5>Peter Farel</h5>
+                                <span class="text-primary">Engineer</span>
+                                <div class="team-social">
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Team End -->
+
+
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Testimonial</p>
+                <h1 class="display-5 mb-5">What Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Our Office</h5>
+                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+9665391767650</p> -->
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Info@commnexsolutions.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <!-- <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a> -->
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Friday</p>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <p class="mb-1">Saturday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div> -->
+                <div class="col-lg-3 col-md-6">
+                    <!-- <h5 class="text-white mb-4">Commnex Solutions</h5> -->
+                    <!-- <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Commnex Solutions</a>, All Right Reserved.
+            </p>
+            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+            <p class="mb-0">Designed By <a class="fw-semi-bold" href="#"> Code web</a> Distributed
+                By: <a href="#">Commnex solutions</a> </p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js?v=whatsapp"></script>
+
+ 
+    <script>
+        document.querySelectorAll('.partner-marquee__track').forEach(function (track) {
+            track.querySelectorAll('.partner-logo-card').forEach(function (card, index) {
+                if (index >= 5) {
+                    card.setAttribute('aria-hidden', 'true');
+                    card.setAttribute('tabindex', '-1');
+                }
+            });
+        });
+    </script>
+    <!-- Template Javascript -->
+    <script src="../js/main.js?v=whatsapp"></script>
+
+
+
+
+</body>
+
+</html>

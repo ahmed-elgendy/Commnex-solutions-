@@ -224,6 +224,103 @@
         text-align: center;
     }
 
+
+
+
+
+  /* ---------- 4) COUNTERS (like homepage facts section) ---------- */
+        .counters-section {
+            background: #0b1a35;
+            padding: 70px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counters-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(700px 300px at 10% 10%, rgba(36, 61, 148, .25), transparent 60%),
+                radial-gradient(700px 300px at 90% 90%, rgba(36, 61, 148, .25), transparent 60%);
+            pointer-events: none;
+        }
+
+        .counters-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .counter-box {
+            position: relative;
+            text-align: center;
+            background: linear-gradient(160deg, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, .03) 55%, rgba(0, 0, 0, .15) 100%);
+            border-radius: 16px;
+            padding: 40px 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+            transition: transform .45s cubic-bezier(.22, .61, .36, 1), box-shadow .45s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
+        }
+
+        .counter-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 4px;
+            border-radius: 0 0 4px 4px;
+            background: #243D94;
+            transition: width .45s ease;
+        }
+
+        .counter-box:hover::before {
+            width: 80px;
+        }
+
+        .counter-box i {
+            font-size: 2.6rem;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, .35));
+        }
+
+        .counter-box .counter-num {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, .45);
+        }
+
+        .counter-box span {
+            font-size: 15.5px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .82);
+            letter-spacing: .4px;
+            display: block;
+        }
+
+
+
+
+
+
+
     @keyframes partners-to-left {
         from {
             transform: translateX(0);
@@ -330,7 +427,7 @@
     .logo-slide img {
         max-height: 60px;
         width: auto;
-        filter: grayscale(100%);
+        /* filter: grayscale(100%); */
         opacity: 0.7;
         transition: filter 0.3s ease, opacity 0.3s ease;
     }
@@ -409,7 +506,10 @@
                         <a href="./page/enterprise-network.html" class="dropdown-item">Enterprise Network</a>
                         <a href="./page/data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
                         <a href="./page/cybersecurity.html" class="dropdown-item">Cybersecurity</a>
-                        <a href="404.html" class="dropdown-item">Light Current Solutions</a>
+                          <a href="./page/Structure-Cabling.html" class="dropdown-item">Structure Cabling</a>
+                   
+
+                        <a href="./page/light-current-solutions.html" class="dropdown-item">Light Current Solutions</a>
                         <a href="./page/data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
                     </div>
                 </div>
@@ -426,7 +526,12 @@
                 <div class="carousel-item active">
                     <img class="w-100" src="img/carousel-1.jpg" alt="Technology solutions">
                     <div class="carousel-caption"><div class="container"><div class="row justify-content-center"><div class="col-lg-10 text-start">
-                        <h1 class="display-1 text-white mb-5">Commnex Solutions is<br>a leading IT solutions<br>provider and system integrator</h1>
+                        <h1 class="display-1 text-white mb-5">
+                            
+                            <!-- Commnex Solutions is<br>a leading IT solutions<br>provider and system integrator -->
+                        
+                        Connecting Ideas, Creating Futures
+                        </h1>
                         <a href="./page/contact.html" class="btn btn-primary py-3 px-5">Contact Now</a>
                     </div></div></div></div>
                 </div>
@@ -533,8 +638,48 @@ Commnex Solutions is pleased to offer the leading-edge Information Technology pr
     <!-- Company Overview End -->
 
 
+
+
+
+
+
+<section class="counters-section">
+    <div class="counters-inner">
+        <div class="counter-box">
+            <i class="fas fa-certificate"></i>
+            <span class="counter-num" data-target="15" data-suffix="+">0</span>
+            <span>Years Experience</span>
+        </div>
+        <div class="counter-box">
+            <i class="fas fa-users-cog"></i>
+            <span class="counter-num" data-target="50" data-suffix="">0</span>
+            <span>Team Members</span>
+        </div>
+        <div class="counter-box">
+            <i class="fas fa-users"></i>
+            <span class="counter-num" data-target="150" data-suffix="+">0</span>
+            <span>Happy Clients</span>
+        </div>
+        <div class="counter-box">
+            <i class="fas fa-check-double"></i>
+            <span class="counter-num" data-target="150" data-suffix="+">0</span>
+            <span>Projects Done</span>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
     <!-- Facts Start -->
-    <div class="container-fluid facts my-5 p-5">
+    <!-- <div class="container-fluid facts my-5 p-5">
         <div class="row g-5">
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="text-center border p-5">
@@ -565,7 +710,7 @@ Commnex Solutions is pleased to offer the leading-edge Information Technology pr
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Facts End -->
 
 
@@ -855,6 +1000,25 @@ Our clients’ satisfaction is what keeps us going and surpassing their expectat
                                     src="img/partners/cybersecurity/Picture21.jpg" alt="Dell logo" title="Dell"></a>
                         </div>
 
+
+
+
+
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="img/partners/Collaboratin/11.jpeg" alt="Apple logo" title="Apple"></a>
+                        </div>
+
+                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    src="img/partners/Collaboratin/22.jpeg" alt="Apple logo" title="Apple"></a>
+                        </div>
+
+
+
+
+
+
+
+
                         <div class="logo-slide"><a href="#" aria-label="Microsoft collaboration partner"><img
                                     src="img/partners/cybersecurity/Picture23.png" alt="Microsoft logo"
                                     title="Microsoft"></a></div>
@@ -870,6 +1034,10 @@ Our clients’ satisfaction is what keeps us going and surpassing their expectat
                         <div class="logo-slide"><a href="#" aria-label="Dell collaboration partner"><img
                                     src="img/partners/cybersecurity/Picture27.png" alt="Dell logo" title="Dell"></a>
                         </div>
+
+
+
+
 
 
 
@@ -1271,6 +1439,105 @@ Our clients’ satisfaction is what keeps us going and surpassing their expectat
     </script>
     <!-- Template Javascript -->
     <script src="../js/main.js?v=whatsapp"></script>
+
+
+
+<script>
+    // ---------- WhatsApp Form Submission ----------
+    // Replace with your WhatsApp number (without '+' or spaces), including country code
+
+    // -- Replace with your WhatsApp number --
+    const WHATSAPP_NUMBER = '966539176765';
+
+    function sendToWhatsApp(event) {
+        // 1) Prevent the default form submission behavior
+        event.preventDefault();
+
+        // 2) Gather field values
+        const fullName = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const serviceType = document.getElementById('serviceType').value;
+        const address = document.getElementById('address').value.trim() || 'Not provided';
+        const notes = document.getElementById('notes').value.trim() || 'No notes';
+
+        // 3) Basic validation in case HTML5 validation is bypassed
+        if (!fullName || !phone || !serviceType) {
+            alert('Please fill in all required fields: Full Name, Phone Number, and Service Type.');
+            return;
+        }
+
+        // 4) Format a clean multi-line message
+        const message =
+            'New Lead from Website:\n' +
+            'Name: ' + fullName + '\n' +
+            'Phone: ' + phone + '\n' +
+            'Service: ' + serviceType + '\n' +
+            'Address: ' + address + '\n' +
+            'Notes: ' + notes;
+
+        // 5) URL-encode the message
+        const encodedMessage = encodeURIComponent(message);
+
+        // 6) Open WhatsApp with the encoded message
+        const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodedMessage;
+
+        window.location.href = whatsappUrl;
+    }
+
+    // ---------- Animated Counters (on scroll) ----------
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter-num');
+
+        counters.forEach(function (counter) {
+            const target = parseInt(counter.getAttribute('data-target'), 10);
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease-out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+                counter.textContent = current + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + suffix;
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+        });
+    }
+
+    // IntersectionObserver to trigger once when visible
+    const countersSection = document.querySelector('.counters-section');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(countersSection);
+    } else {
+        // Fallback: just show final values
+        document.querySelectorAll('.counter-num').forEach(function (c) {
+            c.textContent = c.getAttribute('data-target') + (c.getAttribute('data-suffix') || '');
+        });
+    }
+</script>
+
+
+
+
 
 
 

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Commnex Solutions</title>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css?v=nav-order" rel="stylesheet">
+
+    <style>
+        /* ==========================================================
+           CONTACT US — Redesigned
+           Brand Primary Color: #243D94
+           ========================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, 'Helvetica Neue', Arial, sans-serif;
+            color: #1a2a4a;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- 1) NAVBAR ---------- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            box-shadow: 0 2px 18px rgba(36, 61, 148, .10);
+            padding: 0 24px;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #243D94;
+        }
+
+        .navbar-brand img {
+            height: 46px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 10px 14px;
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #33425e;
+            border-radius: 6px;
+            transition: color .3s ease, background .3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #ffffff;
+            background: #243D94;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: #243D94;
+            border-radius: 3px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* ---------- 2) PAGE HEADER (image background) ---------- */
+        .page-header {
+            position: relative;
+            background: url('../img/carousel-2.jpg') center center no-repeat;
+            background-size: cover;
+            padding: 100px 24px;
+            text-align: center;
+            isolation: isolate;
+        }
+
+        /* Dark blue overlay like the original site style */
+        .page-header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 51, 102, .88) 0%, rgba(0, 51, 102, .55) 100%);
+            z-index: -1;
+        }
+
+        .page-header h1 {
+            color: #ffffff;
+            font-size: clamp(38px, 5.5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 14px;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, .35);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, .9);
+            font-size: 19px;
+            letter-spacing: .4px;
+        }
+
+        /* ---------- 3) CONTACT SECTION — form + image (2 columns) ---------- */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px 100px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: stretch;
+        }
+
+        /* --- Left / Right: Form card --- */
+        .contact-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(36, 61, 148, .14);
+            padding: 44px 42px;
+            border: 1px solid #e9edf6;
+        }
+
+        .contact-card h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #243D94;
+            margin-bottom: 6px;
+        }
+
+        .contact-card .subtitle {
+            color: #66708a;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #33425e;
+            margin-bottom: 7px;
+        }
+
+        .form-group label .required {
+            color: #e11d48;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #1a2a4a;
+            background: #f8f9fd;
+            border: 1.5px solid #dfe4f0;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color .3s ease, box-shadow .3s ease, background .3s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #243D94;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(36, 61, 148, .12);
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: #25D366;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background .3s ease, transform .2s ease, box-shadow .3s ease;
+            margin-top: 8px;
+        }
+
+        .btn-whatsapp i {
+            font-size: 22px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1fb958;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, .35);
+        }
+
+        /* --- Image side --- */
+        .contact-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 520px;
+            box-shadow: 0 24px 60px rgba(36, 61, 148, .18);
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .7s ease;
+        }
+
+        .contact-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .contact-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 30, 61, .85) 0%, transparent 55%);
+        }
+
+        .contact-image-content {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .contact-image-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .contact-image-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .9);
+            margin-bottom: 18px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 14.5px;
+        }
+
+        .contact-info-item i {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .14);
+            border-radius: 50%;
+            font-size: 15px;
+            color: #7ea0ff;
+        }
+
+        /* ---------- 4) COUNTERS (like homepage facts section) ---------- */
+        .counters-section {
+            background: #0b1a35;
+            padding: 70px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counters-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(700px 300px at 10% 10%, rgba(36, 61, 148, .25), transparent 60%),
+                radial-gradient(700px 300px at 90% 90%, rgba(36, 61, 148, .25), transparent 60%);
+            pointer-events: none;
+        }
+
+        .counters-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .counter-box {
+            position: relative;
+            text-align: center;
+            background: linear-gradient(160deg, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, .03) 55%, rgba(0, 0, 0, .15) 100%);
+            border-radius: 16px;
+            padding: 40px 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+            transition: transform .45s cubic-bezier(.22, .61, .36, 1), box-shadow .45s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
+        }
+
+        .counter-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 4px;
+            border-radius: 0 0 4px 4px;
+            background: #243D94;
+            transition: width .45s ease;
+        }
+
+        .counter-box:hover::before {
+            width: 80px;
+        }
+
+        .counter-box i {
+            font-size: 2.6rem;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, .35));
+        }
+
+        .counter-box .counter-num {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, .45);
+        }
+
+        .counter-box span {
+            font-size: 15.5px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .82);
+            letter-spacing: .4px;
+            display: block;
+        }
+
+        /* ---------- 5) FOOTER ---------- */
+        .site-footer {
+            background: #0f1e3d;
+            padding: 48px 24px 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo img {
+            height: 42px;
+            width: auto;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 20px;
+            transition: background .3s ease, transform .3s ease;
+        }
+
+        .footer-social a:hover {
+            background: #243D94;
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            width: 100%;
+            padding: 18px 0;
+            color: rgba(255, 255, 255, .6);
+            font-size: 14px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 900px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                background: #ffffff;
+                box-shadow: 0 18px 30px rgba(36, 61, 148, .14);
+                padding: 12px 20px 20px;
+                display: none;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 13px 16px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .contact-image {
+                min-height: 380px;
+            }
+
+            .counters-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .contact-card {
+                padding: 28px 20px;
+            }
+
+            .page-header {
+                padding: 70px 18px;
+            }
+
+            .counters-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .counter-box .counter-num {
+                font-size: 2.2rem;
+            }
+        }
+
+        .navbar.navbar-expand-lg {
+            padding: 0 50px 0 0;
+            box-shadow: none;
+        }
+
+        .navbar.navbar-expand-lg .navbar-brand {
+            position: relative;
+            display: flex;
+            height: 75px;
+            align-items: center;
+            padding-right: 50px;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        .navbar.navbar-expand-lg .navbar-brand img {
+            width: 100%;
+            height: auto;
+        }
+
+        .navbar.navbar-expand-lg .navbar-nav .nav-link {
+            padding: 20px 0;
+            color: #003366;
+            font-size: 18px;
+        }
+
+        .navbar.navbar-expand-lg .navbar-nav .nav-link:hover,
+        .navbar.navbar-expand-lg .navbar-nav .nav-link.active {
+            color: #006699;
+            background: transparent;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar.navbar-expand-lg {
+                padding-right: 0;
+            }
+
+            .navbar.navbar-expand-lg .navbar-brand {
+                padding-right: 50px;
+            }
+
+            .navbar.navbar-expand-lg .navbar-nav .nav-link {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href="" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+966539176765</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="../index.html" class="navbar-brand ps-5 me-0">
+            <img class="w-100" src="../img/logo.png" alt="Commnex Solutions">
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies &amp; Solutions</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+                        <a href="data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+                        <a href="cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                        <a href="collaboration.html" class="dropdown-item">Collaboration</a>
+                       <a href="light-current-solutions.html" class="dropdown-item">Light Current Solutions</a>
+                        <a href="data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
+                    </div>
+                </div>
+                <a href="partnership.html" class="nav-item nav-link">Partners</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact us</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- ==========================================================
+         2) PAGE HEADER — Image background + overlay
+         ========================================================== -->
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team</p>
+    </section>
+
+    <!-- ==========================================================
+         3) CONTACT SECTION — Form + Image side by side
+         ========================================================== -->
+    <section class="contact-section">
+        <div class="contact-grid">
+
+            <!-- Left Column: Contact Form -->
+            <div class="contact-card">
+                <h2>Send us a message</h2>
+                <p class="subtitle">Fill out the form below and we'll get back to you shortly via WhatsApp.</p>
+
+                <form id="contactForm" onsubmit="sendToWhatsApp(event)" novalidate>
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="e.g. Ahmed Hassan" required>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. +20 100 000 0000" required>
+                    </div>
+
+                    <!-- Service Type -->
+                    <div class="form-group">
+                        <label for="serviceType">Service Type <span class="required">*</span></label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="Enterprise Network">Enterprise Network</option>
+                            <option value="Data Center Solutions">Data Center Solutions</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="City / State / Country">
+                    </div>
+
+                    <!-- Notes / Message -->
+                    <div class="form-group">
+                        <label for="notes">Notes / Message</label>
+                        <textarea id="notes" name="notes" placeholder="Tell us more about your project or inquiry..."></textarea>
+                    </div>
+
+                    <!-- WhatsApp submit button -->
+                    <button type="submit" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        Send via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Column: Image + overlay info -->
+            <div class="contact-image">
+                <!-- TODO: Replace with your own team / office photography -->
+                <img src="../img/carousel-1.jpg" alt="Commnex Solutions Team">
+                <div class="contact-image-content">
+                    <h3>Let's Build Something Great Together</h3>
+                    <p>
+                        Our experts are ready to discuss your next IT project. Contact us today and discover how
+                        Commnex Solutions can transform your business.
+                    </p>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+966539176765</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Info@commnexsolutions.com</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>3564 Al Ghat Street, Al Taawun District, Unit 8183, Riyadh 12478, Saudi Arabia</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         4) COUNTERS — Same design as the homepage facts section
+         ========================================================== -->
+    <section class="counters-section">
+        <div class="counters-inner">
+            <div class="counter-box">
+                <i class="fas fa-certificate"></i>
+                <span class="counter-num" data-target="15" data-suffix="+">0</span>
+                <span>Years Experience</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-users-cog"></i>
+                <span class="counter-num" data-target="50" data-suffix="">0</span>
+                <span>Team Members</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-users"></i>
+                <span class="counter-num" data-target="150" data-suffix="+">0</span>
+                <span>Happy Clients</span>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-check-double"></i>
+                <span class="counter-num" data-target="155" data-suffix="+">0</span>
+                <span>Projects Done</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Our Office</h5>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Info@commnexsolutions.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="service.html">Our Services</a>
+                    <a class="btn btn-link" href="partnership.html">Partners</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <!-- <h5 class="text-white mb-4">Commnex Solutions</h5> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Commnex Solutions</a>, All Right Reserved.</p>
+            <p class="mb-0">Designed By <a class="fw-semi-bold" href="#">Code web</a> Distributed By: <a href="#">Commnex solutions</a></p>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+         JAVASCRIPT — WhatsApp Form + Hamburger + Counters
+         ========================================================== -->
+    <script>
+        // ---------- WhatsApp Form Submission ----------
+        // Replace with your WhatsApp number (without '+' or spaces), including country code
+
+        // -- Replace with your WhatsApp number --
+            const WHATSAPP_NUMBER = '966539176765';
+
+        function sendToWhatsApp(event) {
+            // 1) Prevent the default form submission behavior
+            event.preventDefault();
+
+            // 2) Gather field values
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const serviceType = document.getElementById('serviceType').value;
+            const address = document.getElementById('address').value.trim() || 'Not provided';
+            const notes = document.getElementById('notes').value.trim() || 'No notes';
+
+            // 3) Basic validation in case HTML5 validation is bypassed
+            if (!fullName || !phone || !serviceType) {
+                alert('Please fill in all required fields: Full Name, Phone Number, and Service Type.');
+                return;
+            }
+
+            // 4) Format a clean multi-line message
+            const message =
+                'New Lead from Website:\n' +
+                'Name: ' + fullName + '\n' +
+                'Phone: ' + phone + '\n' +
+                'Service: ' + serviceType + '\n' +
+                'Address: ' + address + '\n' +
+                'Notes: ' + notes;
+
+            // 5) URL-encode the message
+            const encodedMessage = encodeURIComponent(message);
+
+            // 6) Open WhatsApp with the encoded message
+            const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodedMessage;
+
+            window.location.href = whatsappUrl;
+        }
+
+        // ---------- Animated Counters (on scroll) ----------
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-num');
+
+            counters.forEach(function (counter) {
+                const target = parseInt(counter.getAttribute('data-target'), 10);
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const duration = 1800;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease-out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(eased * target);
+                    counter.textContent = current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + suffix;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // IntersectionObserver to trigger once when visible
+        const countersSection = document.querySelector('.counters-section');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(countersSection);
+        } else {
+            // Fallback: just show final values
+            document.querySelectorAll('.counter-num').forEach(function (c) {
+                c.textContent = c.getAttribute('data-target') + (c.getAttribute('data-suffix') || '');
+            });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

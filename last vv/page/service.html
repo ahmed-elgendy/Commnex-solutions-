@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+        <title>Services | Commnex Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css?v=nav-order" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .services-page { --svc-blue: #243D94; --svc-ink: #18213b; --svc-muted: #647087; --svc-pale: #f4f6fb; overflow: hidden; font-family: 'Poppins', sans-serif; }
+        .services-page p { font-family: 'Poppins', sans-serif; }
+        .services-page-header { margin-bottom: 0 !important; background: linear-gradient(90deg, rgba(22, 39, 96, .9), rgba(36, 61, 148, .48)), url('../img/carousel-2.jpg') center / cover no-repeat !important; }
+        .services-page-header h1 { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: .06em; }
+        .services-page-wrap { width: min(calc(100% - 40px), 1180px); margin: 0 auto; }
+        .services-intro-new { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 7vw, 88px); align-items: center; padding: clamp(64px, 9vw, 116px) 0; }
+        .services-intro-new__image { overflow: hidden; border-radius: 16px; }
+        .services-intro-new__image img { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+        .services-kicker-new { margin: 0 0 12px; color: var(--svc-blue); font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+        .services-intro-new h2, .services-details-new h2 { margin: 0 0 18px; color: var(--svc-ink); font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.18; }
+        .services-intro-new h2 span, .services-intro-new__lead span { color: var(--svc-blue); }
+        .services-intro-new__lead { margin: 0 0 16px; color: var(--svc-ink); font-size: clamp(19px, 2vw, 26px); font-weight: 600; line-height: 1.45; }
+        .services-intro-new__copy, .service-detail-new p { margin: 0; color: var(--svc-muted); font-size: 15px; line-height: 1.9; }
+        .service-overview-row { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); gap: clamp(28px, 6vw, 76px); align-items: center; padding-bottom: 72px; }
+        .service-overview-row--reverse { grid-template-columns: minmax(250px, .85fr) minmax(0, 1.15fr); }
+        .service-overview-row--reverse .service-overview-list { order: -1; }
+        .service-overview-accordion { display: grid; height: 300px; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+        .service-overview-accordion a { position: relative; min-width: 0; overflow: hidden; border-radius: 8px; color: #fff; text-decoration: none; transition: transform .3s ease; }
+        .service-overview-accordion a::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 25%, rgba(9, 17, 49, .92)); content: ''; }
+        .service-overview-accordion img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease, filter .3s ease; }
+        .service-overview-accordion span { position: absolute; z-index: 1; right: 9px; bottom: 14px; left: 9px; font-size: 12px; font-weight: 700; line-height: 1.35; text-align: center; opacity: 0; transition: opacity .3s ease; }
+        .service-overview-accordion a:hover, .service-overview-accordion a:focus-visible { z-index: 2; transform: scaleX(1.2); }
+        .service-overview-accordion a:hover img, .service-overview-accordion a:focus-visible img { filter: brightness(.68); transform: scale(1.12); }
+        .service-overview-accordion a:hover span, .service-overview-accordion a:focus-visible span { opacity: 1; }
+        .service-overview-list h3 { margin: 0 0 17px; color: var(--svc-blue); font-size: 18px; font-weight: 700; }
+        .service-overview-list ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+        .service-overview-list li { position: relative; padding-left: 22px; color: var(--svc-muted); font-size: 14px; line-height: 1.5; }
+        .service-overview-list li::before { position: absolute; top: .55em; left: 0; width: 9px; height: 9px; border: 2px solid var(--svc-blue); border-radius: 50%; content: ''; }
+        .services-details-new { padding: 35px 0 112px; }
+        .services-details-new__heading { margin-bottom: 45px; text-align: center; }
+        .services-details-new__heading h2 { margin-bottom: 15px; }
+        .services-rule-new { width: 72px; height: 2px; margin: 0 auto; background: var(--svc-blue); }
+        .service-detail-new { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 8vw, 120px); align-items: center; padding: 58px 0; border-bottom: 1px solid #e3e7f0; }
+        .service-detail-new:nth-of-type(even) { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+        .service-detail-new:nth-of-type(even) .service-detail-new__visual { order: 2; }
+        .service-detail-new__number { margin: 0 0 13px !important; color: var(--svc-blue) !important; font-size: 14px !important; font-weight: 700; letter-spacing: .14em; }
+        .service-detail-new h3 { margin: 0 0 16px; color: var(--svc-ink); font-size: clamp(23px, 3vw, 34px); font-weight: 700; line-height: 1.25; }
+        .service-detail-new__visual { overflow: hidden; border-radius: 14px; background: var(--svc-pale); }
+        .service-detail-new__visual img { display: block; width: 100%; aspect-ratio: 1.65; object-fit: cover; }
+        .service-detail-new__lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+        .service-detail-new__lists h4 { margin: 0 0 10px; color: var(--svc-blue); font-size: 14px; }
+        .service-detail-new__lists ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+        .service-detail-new__lists li { position: relative; padding-left: 16px; color: var(--svc-muted); font-size: 13px; line-height: 1.5; }
+        .service-detail-new__lists li::before { position: absolute; top: .65em; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--svc-blue); content: ''; }
+        @media (max-width: 800px) { .services-intro-new, .service-overview-row, .service-overview-row--reverse, .service-detail-new, .service-detail-new:nth-of-type(even) { grid-template-columns: 1fr; } .service-overview-row--reverse .service-overview-list, .service-detail-new:nth-of-type(even) .service-detail-new__visual { order: initial; } .service-overview-accordion { height: 260px; } .service-detail-new { gap: 28px; padding: 42px 0; } }
+        @media (max-width: 520px) { .services-page-wrap { width: min(calc(100% - 32px), 1180px); } .service-overview-accordion { height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px; } .service-overview-accordion a:hover, .service-overview-accordion a:focus-visible { transform: scale(1.03); } .service-overview-accordion span { opacity: 1; } .service-detail-new__lists { grid-template-columns: 1fr; gap: 18px; } }
+        #legacy-services-primary, #legacy-services-secondary { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+966539176765</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="../index.html" class="navbar-brand ps-5 me-0">
+             <img class="w-100" src="../img/logo.png" alt="Commnex Solutions">
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Technologies & Solutions</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="enterprise-network.html" class="dropdown-item">Enterprise Network</a>
+                        <a href="data-center-solutions.html" class="dropdown-item">Data Center Solutions</a>
+                        <a href="cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                        <a href="collaboration.html" class="dropdown-item">Collaboration</a>
+                        <a href="light-current-solutions.html" class="dropdown-item">Light Current Solutions</a>
+
+                        <a href="data-center-preparation.html" class="dropdown-item">Data Center Preparation</a>
+                    </div>
+                </div>
+
+                <a href="partnership.html" class="nav-item nav-link">Partners</a>
+                <a href="service.html" class="nav-item nav-link active">Services</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us</a>
+            </div>
+            <!-- <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a> -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header services-page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">SERVICES</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+
+
+
+    <main class="services-page">
+        <section class="services-page-wrap services-intro-new" aria-labelledby="services-intro-title">
+            <div class="services-intro-new__image"><img src="../img/our value-01.jpg" alt="Commnex Solutions team delivering IT services"></div>
+            <div><p class="services-kicker-new">Professional services</p><h2 id="services-intro-title"><span>Commnex Solutions</span> Services</h2><p class="services-intro-new__lead">At <span>Commnex Solutions</span> We Pride Ourselves In Professional Services</p><p class="services-intro-new__copy">Our experienced and professional team supports clients through every stage of project execution, from initial planning and consultancy to detailed design, engineering, implementation and ongoing support. We bring practical expertise to complex technology environments and build solutions that are ready for the future.</p></div>
+        </section>
+        <section class="services-page-wrap" aria-label="Service overview">
+            <div class="service-overview-row"><div class="service-overview-accordion">
+                <a href="#consultancy"><img src="../img/Services/Enterprise network-01.jpg" alt="Consultancy service"><span>Consultancy</span></a><a href="#design-engineering"><img src="../img/Services/Data center solution-02.jpg" alt="Detailed design and engineering service"><span>Detailed Design &amp; Engineering</span></a><a href="#project-management"><img src="../img/Services/Data center preparation-05.jpg" alt="Project management service"><span>Project Management</span></a><a href="#system-integration"><img src="../img/Services/collaboration-06.jpg" alt="System integration and FAT service"><span>System Integration &amp; FAT</span></a><a href="#installation-training"><img src="../img/Services/Cyber security-03.jpg" alt="Installation and training service"><span>Installation &amp; Training</span></a>
+            </div><div class="service-overview-list"><h3>How we help</h3><ul><li>Consultancy</li><li>Detailed Design and Engineering</li><li>Project Management</li><li>System Integration and FAT</li><li>Installation and Training</li></ul></div></div>
+            <div class="service-overview-row service-overview-row--reverse"><div class="service-overview-list"><h3>Complete project support</h3><ul><li>Support, Operation and Maintenance</li><li>Network and infrastructure solutions</li><li>Data center readiness</li><li>Cybersecurity environments</li><li>Business continuity planning</li></ul></div><div class="service-overview-accordion">
+                <a href="#support-maintenance"><img src="../img/Services/Enterprise network-01.jpg" alt="Support, operation and maintenance service"><span>Support, Operation &amp; Maintenance</span></a><a href="#consultancy"><img src="../img/Services/Cyber security-03.jpg" alt="Technology consultancy service"><span>Technology Consultancy</span></a><a href="#design-engineering"><img src="../img/Services/Data center solution-02.jpg" alt="Infrastructure design service"><span>Infrastructure Design</span></a><a href="#system-integration"><img src="../img/Services/collaboration-06.jpg" alt="System integration service"><span>System Integration</span></a><a href="#installation-training"><img src="../img/Services/Data center preparation-05.jpg" alt="Technical implementation service"><span>Technical Implementation</span></a>
+            </div></div>
+        </section>
+        <section class="services-page-wrap services-details-new" aria-labelledby="services-details-title"><div class="services-details-new__heading"><h2 id="services-details-title">Services</h2><div class="services-rule-new" aria-hidden="true"></div></div>
+            <article class="service-detail-new" id="consultancy"><div><p class="service-detail-new__number">01 / CONSULTANCY</p><h3>Consultancy</h3><p>We help organizations turn business priorities into practical technology roadmaps. Our consultants assess your current environment, identify risks and opportunities, and shape a solution that balances performance, security, scalability and cost.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Enterprise network-01.jpg" alt="Commnex Solutions consultancy for enterprise networks"></div></article>
+            <article class="service-detail-new" id="design-engineering"><div><p class="service-detail-new__number">02 / DESIGN &amp; ENGINEERING</p><h3>Detailed Design &amp; Engineering</h3><p>From high-level architecture to detailed implementation drawings and documentation, our engineering team designs dependable systems around your operational requirements. Every detail is reviewed for integration, future expansion and maintainability.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Data center solution-02.jpg" alt="Detailed data center design and engineering"></div></article>
+            <article class="service-detail-new" id="project-management"><div><p class="service-detail-new__number">03 / PROJECT MANAGEMENT</p><h3>Project Management</h3><p>Our project managers coordinate people, vendors, schedules, risks and quality from kickoff to handover. Clear governance and regular reporting keep delivery aligned with scope, milestones and stakeholder expectations.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Data center preparation-05.jpg" alt="Commnex Solutions project management and preparation"></div></article>
+            <article class="service-detail-new" id="system-integration"><div><p class="service-detail-new__number">04 / SYSTEM INTEGRATION &amp; FAT</p><h3>System Integration &amp; FAT</h3><p>We integrate infrastructure, applications and security technologies into a coordinated operating environment. Factory Acceptance Testing verifies functionality and performance before deployment, reducing surprises during go-live.</p></div><div class="service-detail-new__visual"><img src="../img/Services/collaboration-06.jpg" alt="System integration and factory acceptance testing"></div></article>
+            <article class="service-detail-new" id="installation-training"><div><p class="service-detail-new__number">05 / INSTALLATION &amp; TRAINING</p><h3>Installation, Integrated System Testing &amp; Training</h3><p>Our field teams install and configure the solution, perform integrated system testing, and transfer operational knowledge to your staff. The result is a controlled handover supported by clear documentation and practical training.</p></div><div class="service-detail-new__visual"><img src="../img/Services/Cyber security-03.jpg" alt="Installation, testing and training services"></div></article>
+            <article class="service-detail-new" id="support-maintenance"><div><p class="service-detail-new__number">06 / SUPPORT &amp; MAINTENANCE</p><h3>Support, Operation &amp; Maintenance</h3><p>We keep critical technology dependable after deployment with responsive support, proactive monitoring and lifecycle care. Our operation and maintenance services help teams protect availability, performance and business continuity.</p><div class="service-detail-new__lists"><div><h4>Support</h4><ul><li>Incident and request management</li><li>Remote and onsite assistance</li><li>Preventive health checks</li></ul></div><div><h4>Maintenance</h4><ul><li>Performance optimization</li><li>Configuration and patching</li><li>Lifecycle planning</li></ul></div></div></div><div class="service-detail-new__visual"><img src="../img/Services/Enterprise network-01.jpg" alt="IT support, operation and maintenance services"></div></article>
+        </section>
+    </main>
+
+    <!-- Service Start -->
+    <div id="legacy-services-primary" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
+                <h1 class="display-5 mb-4">Our Services</h1>
+
+
+  <p class="fw-medium text-uppercase text-primary mb-4">Commnex Solutions  Services</p>
+                <h6 class="display-5 mb-4">ِAt Commnex Solutions, We Pride Ourselves
+                
+</h6>
+
+                <p class="fw-medium  text-primary mb-2" style="    color: #02245b !important;">
+
+At Commnex Solutions, our experienced and professional team is dedicated to supporting clients through every stage of project execution, from initial planning to the detailed design. We specialize in both front-end process design and basic and detailed engineering tasks.
+
+
+                </p>
+
+
+
+
+
+
+
+
+            </div>
+            <div class="row gy-5 gx-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/Services/Enterprise network-01.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/Services/Enterprise network-01.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Enterprise Network</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">
+                                    
+                                  LAN Switching<br>
+                                Data Center Switching​<br>
+                                Routing<br>
+                                Wireless Technologies<br>
+                                Software-Defined Network (SDN)<br>
+                                SD-WAN<br>
+                                WAN Optimization <br>
+                                Network Management<br>
+                                Network Packet Broker<br>
+                                Application Delivery Control (ADC)<br>
+                                Global Server Load-Balance (GSLB)<br>
+                                Intelligent Traffic Management (ITM)
+
+                                            <h1 class="display-3 text-white animated slideInRight">SERVICES</h1>
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-light" href="">Contact Now </a> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/Services/Data center solution-02.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/Services/Data center solution-02.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Data Center Solutions</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">
+                                    
+                                 Servers<br>
+                                Storage (SAN/NAS/Unified)<br>
+                                Storage Networking<br>
+                                Data Center Virtualization<br>
+                                Hyper converged Infrastructure (HCI)<br>
+                                Cloud Computing<br>
+                                Backup Systems<br>
+                                ITSM<br>
+                                Enterprise Content Management<br>
+                                Application Performance Management (APM)<br>
+                                Workload Optimization Management​
+                                
+                                
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-light" href="">Contact Now </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/Services/collaboration-06.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/Services/collaboration-06.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Collaboration​</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">
+                                    
+                                  IP Telephony​ <br>
+                                    Video Conference Solutions​<br>
+                                    VoIP Recording Systems​<br>
+                                    VoIP Billing​<br>
+                                    Contact Centers<br>
+
+
+                                
+                                </p>
+                            </div>
+                        </div>
+                      <a class="btn btn-light" href="">Contact Now </a>
+                    </div>
+                </div>
+
+
+
+
+                 
+
+            </div>
+             <!-- <a href="#" class="btn btn-primary py-3 px-5 animated slideInRight"> Contact Now </a> -->
+
+             <!-- <a href="./page/service.html" class="btn btn-primary py-3 px-5 animated slideInRight">  More Services </a> -->
+
+<!-- <a class="btn btn-light" href="">Contact Now </a>  -->
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Service Start -->
+    <div id="legacy-services-secondary" class="container-xxl py-5">
+        <div class="container">
+           
+            <div class="row gy-5 gx-4">
+             
+               
+               
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/Services/Cyber security-03.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/Services/Cyber security-03.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Cybersecurity</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">
+                                    
+                 Network Security (Firewalls, IPS, NDR, NAC, WAF)
+                 <br>
+                Identity & Access Management (IAM / PAM, MFA)
+                <br>
+                Endpoint & System Protection (Endpoint Protection, EDR, Patch Management)
+                <br>
+                Threat Detection & Response (SIEM, SOAR, Threat Intelligence)
+                <br>
+                Application & Data Security (Application Security, DLP, Web & Email Security)
+                <br>
+                Infrastructure & Vulnerability Management (Vulnerability Management, DDI, NSPM)
+                <br>
+                OT/IoT Security
+                <br>
+                Content Protection (Screen & Printing Watermarking)
+
+                                
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-light" href="">Contact Now </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/Services/Data center preparation-05.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/Services/Data center preparation-05.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Data Center Preparation</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">
+                                    
+                                   As one of data center design-build companies in Egypt, COMMNEX SOLUTIONS team brings a comprehensive set of skills and expertise to the planning process that allows us to easily assess existing data center conditions and develop a plan aligned to customer goals.
+
+                                
+                                </p>
+                            </div>
+                        </div>
+                        <a class="btn btn-light" href="">Contact Now </a>
+                    </div>
+                </div>
+                <!-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <img class="img-fluid" src="../img/service-3.jpg" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="../img/service-3.jpg" alt="">
+                        </div>
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">Plumbing & Water Treatment</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
+                                    lorem sed diam stet diam sed stet.</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-light" href="">Contact Now </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Our Office</h5>
+                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+9665391767650</p> -->
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Info@commnexsolutions.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <!-- <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a> -->
+                </div>
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Friday</p>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <p class="mb-1">Saturday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div> -->
+                <div class="col-lg-3 col-md-6">
+                    <!-- <h5 class="text-white mb-4">Commnex Solutions</h5> -->
+                    <!-- <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Commnex Solutions</a>, All Right Reserved.
+            </p>
+            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+            <p class="mb-0">Designed By <a class="fw-semi-bold" href="#"> Code web</a> Distributed
+                By: <a href="#">Commnex solutions</a> </p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js?v=whatsapp"></script>
+</body>
+
+</html>
