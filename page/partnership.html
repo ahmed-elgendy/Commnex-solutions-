@@ -47,10 +47,15 @@
         .partners-intro h2 { margin: 0 0 18px; color: var(--partners-ink); font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.18; }
         .partners-intro h2 span { color: var(--partners-blue); }
         .partners-intro__copy { margin: 0; color: var(--partners-muted); font-size: 15px; line-height: 1.9; }
-        .partners-groups { padding-bottom: 76px; }
-        .partner-group { padding: 34px 0; }
-        .partner-group__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 100px; }
-        .partner-group__heading h2 { margin: 0; color: var(--partners-ink); font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; }
+        /* .partners-groups { padding-bottom: 76px; } */
+        /* .partner-group { padding: 34px 0; } */
+        .partner-group__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 50px; }
+        .partner-group__heading h2 { margin: 0; color: var(--partners-ink); 
+            /* font-size: clamp(20px, 2.5vw, 28px); 
+            font-weight: 700; */
+                font-size: 51px;
+        
+        }
         .partner-group__heading p { margin: 0; color: var(--partners-blue); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
         .partner-marquee { position: relative; overflow: hidden; padding: 10px 0; -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); }
         .partner-marquee__track { display: flex; width: max-content; animation: partners-to-left 34s linear infinite; animation-play-state: running; will-change: transform; }
@@ -63,7 +68,11 @@
         @keyframes partners-to-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @keyframes partners-to-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
         @media (max-width: 800px) { .partners-intro { grid-template-columns: 1fr; } .partners-intro__image { max-width: 680px; } }
-        @media (max-width: 520px) { .partners-shell { width: min(calc(100% - 32px), 1180px); } .partners-intro { padding-top: 56px; } .partner-group__heading { display: block; } .partner-group__heading p { margin-top: 5px; } .partner-logo-card { width: 142px; flex-basis: 142px; height: 78px; font-size: 13px; } .partner-logo-card i { font-size: 21px; } }
+        @media (max-width: 520px) { .partners-shell { width: min(calc(100% - 32px), 1180px); } .partners-intro { padding-top: 56px; } 
+        .partner-group__heading { display: block; } 
+        .partner-group__heading p { margin-top: 5px; } 
+        .partner-logo-card { width: 142px; flex-basis: 142px; height: 78px; font-size: 13px; } 
+        .partner-logo-card i { font-size: 21px; } }
    
    
    .logos-carousel-wrapper{
@@ -111,7 +120,7 @@
   max-height: 60px;
   width: auto;
   /* filter: grayscale(100%); */
-  opacity: 0.7;
+  /* opacity: 0.7; */
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
@@ -175,7 +184,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
         <a href="../index.html" class="navbar-brand ps-5 me-0">
-             <img class="w-100" src="../img/logo.png" alt="Commnex Solutions">
+             <img  src="../img/logo.png" alt="Commnex Solutions" style="width: 220px;">
         </a>
         <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -229,7 +238,12 @@
         <header class="partners-page-header"><div class="partners-shell"><h1>Partners</h1></div></header>
         <section class="partners-shell partners-intro" aria-labelledby="partners-intro-title">
             <div class="partners-intro__image"><img src="../img/partner.jpeg" alt="Commnex Solutions technology partnership"></div>
-            <div><p class="partners-kicker">Our partners</p><h2 id="partners-intro-title">Technology built on <span>trusted collaboration</span></h2><p class="partners-intro__copy">Commnex Solutions works with leading technology providers to bring dependable, scalable solutions to every project. Our partner ecosystem gives clients access to deep expertise across collaboration, cybersecurity, data centers, enterprise networks and light current technologies.</p></div>
+            <div>
+                
+                <!-- <p class="partners-kicker">Our partners</p>
+                 -->
+                
+                <h2 id="partners-intro-title">Technology built on <span>trusted collaboration</span></h2><p class="partners-intro__copy">Commnex Solutions works with leading technology providers to bring dependable, scalable solutions to every project. Our partner ecosystem gives clients access to deep expertise across collaboration, cybersecurity, data centers, enterprise networks and light current technologies.</p></div>
         </section>
 
 
@@ -241,7 +255,7 @@
         
         
         
-                    <div class="partner-group">
+                    <div>
                         <div class="partner-group__heading">
                             <h2>Enterprise-network</h2>
                             <!-- <p>Connected workplaces</p> -->
@@ -470,12 +484,12 @@
                         <div class="logo-slide"><a href="#" aria-label="sc"><img
                                     src="../img/partners/Collaboratin/Picture1.png" alt="Microsoft logo"
                                     title="Microsoft"></a></div>
-                        <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
+                        <!-- <div class="logo-slide"><a href="#" aria-label="Cisco collaboration partner">
                                 <img src="../img/partners/Collaboratin/Picture38.png" alt="Cisco logo"
-                                    title="Cisco"></a></div>
-                        <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
+                                    title="Cisco"></a></div> -->
+                        <!-- <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
                                     src="../img/partners/Collaboratin/Picture39.png" alt="Apple logo" title="Apple"></a>
-                        </div>
+                        </div> -->
           
 
                     <div class="logo-slide"><a href="#" aria-label="Apple collaboration partner"><img
